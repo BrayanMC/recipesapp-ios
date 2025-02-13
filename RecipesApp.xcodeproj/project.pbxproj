@@ -16,6 +16,7 @@
 		84F2FA992D5E5D7200BDB49E /* CommonProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2FA982D5E5D7200BDB49E /* CommonProtocols */; };
 		84F2FB7D2D5E638B00BDB49E /* CommonManagers in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2FB7C2D5E638B00BDB49E /* CommonManagers */; };
 		84F2FB7F2D5E677600BDB49E /* DI in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2FB7E2D5E677600BDB49E /* DI */; };
+		84F2FC602D5E7FBF00BDB49E /* Base in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2FC5F2D5E7FBF00BDB49E /* Base */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		84D6F7022D5B08FE002381AC /* RecipesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D6F70C2D5B08FE002381AC /* RecipesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F2FA902D5DD6E000BDB49E /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
+		84F2FC5E2D5E7D9700BDB49E /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -47,7 +49,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Core/Managers/LocationManager.swift,
 				Networking/DTOs/ErrorResponse.swift,
 				Networking/DTOs/Recipes/Responses/RecipeResponse.swift,
 				Networking/NetworkCore/Endpoint.swift,
@@ -76,7 +77,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Core/Managers/LocationManager.swift,
 				Networking/DTOs/ErrorResponse.swift,
 				Networking/DTOs/Recipes/Responses/RecipeResponse.swift,
 				Networking/NetworkCore/Endpoint.swift,
@@ -147,6 +147,7 @@
 				84F2FB7D2D5E638B00BDB49E /* CommonManagers in Frameworks */,
 				84F2F45D2D5DBAEB00BDB49E /* RxSwift in Frameworks */,
 				84F2F3502D5DBA3700BDB49E /* SkeletonView in Frameworks */,
+				84F2FC602D5E7FBF00BDB49E /* Base in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +171,7 @@
 		84D6F6E32D5B08FD002381AC = {
 			isa = PBXGroup;
 			children = (
+				84F2FC5E2D5E7D9700BDB49E /* Core */,
 				84F2FA902D5DD6E000BDB49E /* Common */,
 				84D6F6EE2D5B08FD002381AC /* RecipesApp */,
 				84D6F7052D5B08FE002381AC /* RecipesAppTests */,
@@ -746,6 +748,10 @@
 		84F2FB7E2D5E677600BDB49E /* DI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DI;
+		};
+		84F2FC5F2D5E7FBF00BDB49E /* Base */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Base;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

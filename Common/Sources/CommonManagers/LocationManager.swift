@@ -9,20 +9,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+public final class LocationManager: NSObject, CLLocationManagerDelegate, @unchecked Sendable {
     
     private let locationManager = CLLocationManager()
-    var onAuthorizationChange: ((CLAuthorizationStatus) -> Void)?
-    var onLocationUpdate: ((CLLocation) -> Void)?
-    var onLocationServicesDisabled: (() -> Void)?
+    public var onAuthorizationChange: ((CLAuthorizationStatus) -> Void)?
+    public var onLocationUpdate: ((CLLocation) -> Void)?
+    public var onLocationServicesDisabled: (() -> Void)?
 
-    override init() {
+    public override init() {
         super.init()
         locationManager.delegate = self
     }
 
     /// Checks if location services are enabled and requests authorization if needed.
-    func checkLocationServices() {
+    public func checkLocationServices() {
         DispatchQueue.global().async {
             if CLLocationManager.locationServicesEnabled() {
                 DispatchQueue.main.async { [weak self] in
@@ -38,28 +38,29 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
 
     /// Starts updating the location.
-    func startUpdatingLocation() {
+    public func startUpdatingLocation() {
         DispatchQueue.global().async { [weak self] in
             self?.locationManager.startUpdatingLocation()
         }
     }
 
     /// Stops updating the location.
-    func stopUpdatingLocation() {
+    public func stopUpdatingLocation() {
         DispatchQueue.global().async { [weak self] in
             self?.locationManager.stopUpdatingLocation()
         }
     }
 
     /// Called when the authorization status changes.
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        let authorizationStatus = manager.authorizationStatus
         DispatchQueue.main.async { [weak self] in
-            self?.onAuthorizationChange?(manager.authorizationStatus)
+            self?.onAuthorizationChange?(authorizationStatus)
         }
     }
 
     /// Called when the location is updated.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         DispatchQueue.main.async { [weak self] in
             self?.onLocationUpdate?(location)

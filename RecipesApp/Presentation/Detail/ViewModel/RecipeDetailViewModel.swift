@@ -6,6 +6,7 @@
 //
 
 import CommonHelpers
+import Base
 
 class RecipeDetailViewModel: BaseViewModel {
     

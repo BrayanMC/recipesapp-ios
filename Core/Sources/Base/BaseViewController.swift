@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CommonExtensions
 
-class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
     
-    func hideKeyboardWhenTappedAround() {
+    public func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
@@ -19,11 +20,11 @@ class BaseViewController: UIViewController {
         view.dismissKeyboard()
     }
     
-    func backTo() {
+    public func backTo() {
         navigationController?.popViewController(animated: true)
     }
     
-    func dismiss() {
+    public func dismiss() {
         navigationController?.dismiss(animated: true)
     }
 }
