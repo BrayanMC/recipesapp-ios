@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  RecipesApp
+
+  Created by Brayan Munoz Campos on 11/02/25.
+  
+*/
+
+// MARK: Keyboard
+
+"keyboard_barButtonItem_title_accept" = "Aceptar";
+
+// MARK: Recipes
+
+"customTextField_placeholder_searchRecipe" = "Buscar receta";

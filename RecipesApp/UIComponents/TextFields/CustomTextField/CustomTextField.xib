@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTextField" customModule="RecipesApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="uaD-yh-6xv" id="rjg-MD-che"/>
+                <outlet property="textField" destination="5sp-cD-nFX" id="VIh-zx-t3L"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="uaD-yh-6xv">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-1O-mZm">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5sp-cD-nFX">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
+                            <color key="textColor" name="Black"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="Gray4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="customTextFieldEditingChanged:" destination="-1" eventType="editingChanged" id="sLt-K7-tle"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5sp-cD-nFX" secondAttribute="trailing" id="U6d-wT-eRh"/>
+                        <constraint firstAttribute="bottom" secondItem="5sp-cD-nFX" secondAttribute="bottom" id="WmW-vc-pS4"/>
+                        <constraint firstItem="5sp-cD-nFX" firstAttribute="leading" secondItem="Dc8-1O-mZm" secondAttribute="leading" id="aIM-04-hwa"/>
+                        <constraint firstItem="5sp-cD-nFX" firstAttribute="top" secondItem="Dc8-1O-mZm" secondAttribute="top" id="dEX-b5-DYL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="goH-aP-KR3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Dc8-1O-mZm" secondAttribute="trailing" id="EWz-8g-Tjf"/>
+                <constraint firstAttribute="bottom" secondItem="Dc8-1O-mZm" secondAttribute="bottom" id="VO9-G5-y3r"/>
+                <constraint firstItem="Dc8-1O-mZm" firstAttribute="leading" secondItem="uaD-yh-6xv" secondAttribute="leading" id="cnI-F5-neY"/>
+                <constraint firstItem="Dc8-1O-mZm" firstAttribute="top" secondItem="uaD-yh-6xv" secondAttribute="top" id="xtz-pa-AbG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="179" y="-14"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray4">
+            <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
