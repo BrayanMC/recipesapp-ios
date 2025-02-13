@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol ReusableView {
+public protocol ReusableView {
     static var reuseIdentifier: String { get }
 }
 
 extension ReusableView where Self: UIView {
     
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         return String(describing: self)
     }
 }

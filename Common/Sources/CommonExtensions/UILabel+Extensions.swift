@@ -9,7 +9,7 @@ import UIKit
 
 extension UILabel {
     
-    func setLineHeight(lineHeight: CGFloat) {
+    public func setLineHeight(lineHeight: CGFloat) {
         if let text = text {
             let attributeString = NSMutableAttributedString(string: text)
             let style = NSMutableParagraphStyle()

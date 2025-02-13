@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import DI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    let diContainer = DIContainer()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         initAppTheme()
         
         initMonitoring()
+        
+        setupDIContainer()
                 
         window = UIWindow(windowScene: windowScene)
         let homeController = buildHomeScreen()
@@ -65,12 +69,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func buildHomeScreen() -> UINavigationController {
-        let viewController = ViewControllerFactory.makeHomeViewController()
+        let viewController = ViewControllerFactory.makeHomeViewController(diContainer: diContainer)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }
     
     private func initMonitoring() {
         NetworkMonitor.shared.startMonitoring()
+    }
+    
+    private func setupDIContainer() {
+        diContainer.register(type: AlertFactory.self, service: DefaultAlertFactory())
+        diContainer.register(type: AlertFactory.self, service: SettingsAlertFactory())
+        
+        let networkManager = NetworkManager()
+        diContainer.register(type: NetworkManager.self, service: networkManager)
+        
+        let remoteRecipesRepository = RemoteRecipesRepository(networkManager: networkManager)
+        diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository)
+        
+        let fetchRecipesUseCase = FetchRecipesUseCase(recipesRepository: remoteRecipesRepository)
+        diContainer.register(type: FetchRecipesUseCase.self, service: fetchRecipesUseCase)
     }
 }

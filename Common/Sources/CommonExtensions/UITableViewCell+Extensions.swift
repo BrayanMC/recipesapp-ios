@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonProtocols
 
 extension UITableViewCell: ReusableView {
     // empty

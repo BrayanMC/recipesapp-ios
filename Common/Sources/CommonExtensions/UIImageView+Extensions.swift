@@ -10,7 +10,7 @@ import SDWebImage
 
 extension UIImageView {
     
-    func loadImageFromURL(with url: String) {
+    public func loadImageFromURL(with url: String) {
         self.sd_setImage(with: URL(string: url))
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import CommonHelpers
 
 class MapViewModel: BaseViewModel {
     

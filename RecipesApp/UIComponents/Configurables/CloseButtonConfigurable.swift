@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CommonManagers
+import CommonHelpers
 
 public protocol CloseButtonConfigurable {
     /// Adds the close button to the view and sets up its constraints.
@@ -20,7 +22,9 @@ extension CloseButtonConfigurable where Self: UIViewController {
     /// Close button that is added to the view.
     private var closeButton: UIButton {
         let button = UIButton(type: .custom)
-        button.setImage(ImageManager.shared.image(named: ImageNames.icCloseNormal), for: .normal)
+        Task {
+            await button.setImage(ImageManager.shared.image(named: ImageNames.icCloseNormal), for: .normal)
+        }
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

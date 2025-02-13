@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CommonExtensions
+import CommonManagers
 
 class RecipeCellView: UITableViewCell {
     
@@ -85,6 +87,6 @@ extension RecipeCellView: ViewStylerProtocol {
     
     func configureViewStyles() {
         AppThemeManager.shared.applyTextMediumStyle(to: nameLabel)
-        AppThemeManager.shared.applyP3Style(to: preparationTimeLabel, color: ColorManager.shared.gray2)
+        AppThemeManager.shared.applyP3Style(to: preparationTimeLabel, color: ColorManager.gray2)
     }
 }

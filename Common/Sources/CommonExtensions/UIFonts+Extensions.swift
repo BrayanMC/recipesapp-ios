@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CommonHelpers
 
 extension UIFont {
     
-    static func museoSansFont(type: MuseoSansFont, size: CGFloat) -> UIFont {
+    public static func museoSansFont(type: MuseoSansFont, size: CGFloat) -> UIFont {
         return UIFont(name: type.rawValue, size: size) ?? UIFont()
     }
 }

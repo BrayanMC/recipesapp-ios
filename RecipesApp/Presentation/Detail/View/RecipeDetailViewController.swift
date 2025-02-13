@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import CommonHelpers
+import CommonManagers
+import CommonExtensions
 
 class RecipeDetailViewController: BaseViewController, Storyboarded, BackButtonConfigurable {
     
@@ -104,9 +107,16 @@ class RecipeDetailViewController: BaseViewController, Storyboarded, BackButtonCo
     
     @IBAction func goToLocationCustomButtonTapped(_ sender: Any) {
         guard let recipe = viewModel?.recipeDetail.value else { return }
+        guard let sceneDelegate = UIApplication.shared.connectedScenes
+            .first?.delegate as? SceneDelegate else {
+            return
+        }
         
         let viewData = MapViewData(recipe: recipe)
-        let mapViewController = ViewControllerFactory.makeMapViewController(with: viewData)
+        let mapViewController = ViewControllerFactory.makeMapViewController(
+            with: viewData,
+            diContainer: sceneDelegate.diContainer
+        )
         mapViewController.modalPresentationStyle = .overCurrentContext
         
         presentInNavigationController(viewController: mapViewController)
@@ -117,10 +127,10 @@ extension RecipeDetailViewController: ViewStylerProtocol {
     
     func configureViewStyles() {
         AppThemeManager.shared.applyH2Style(to: foodPlateNameLabel)
-        AppThemeManager.shared.applyP2Style(to: preparationTimeLabel, color: ColorManager.shared.gray2)
-        AppThemeManager.shared.applyH3Style(to: descriptionTitleLabel, color: ColorManager.shared.gray1)
-        AppThemeManager.shared.applyP2Style(to: descriptionLabel, color: ColorManager.shared.gray2)
-        AppThemeManager.shared.applyH3Style(to: ingredientsTitleLabel, color: ColorManager.shared.gray1)
+        AppThemeManager.shared.applyP2Style(to: preparationTimeLabel, color: ColorManager.gray2)
+        AppThemeManager.shared.applyH3Style(to: descriptionTitleLabel, color: ColorManager.gray1)
+        AppThemeManager.shared.applyP2Style(to: descriptionLabel, color: ColorManager.gray2)
+        AppThemeManager.shared.applyH3Style(to: ingredientsTitleLabel, color: ColorManager.gray1)
     }
 }
 

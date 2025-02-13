@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonHelpers
 
 class HomeViewController: BaseViewController, Storyboarded {
 
@@ -97,8 +98,16 @@ class HomeViewController: BaseViewController, Storyboarded {
     }
     
     public func navigateToDetail(with recipe: Recipe) {
+        guard let sceneDelegate = UIApplication.shared.connectedScenes
+            .first?.delegate as? SceneDelegate else {
+            return
+        }
+        
         let viewData = RecipeDetailViewData(recipe: recipe)
-        let viewController = ViewControllerFactory.makeRecipeDetailViewController(with: viewData)
+        let viewController = ViewControllerFactory.makeRecipeDetailViewController(
+            with: viewData,
+            diContainer: sceneDelegate.diContainer
+        )
         
         navigationController?.pushViewController(viewController, animated: true)
     }

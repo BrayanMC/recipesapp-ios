@@ -5,9 +5,9 @@
 //  Created by Brayan Munoz Campos on 11/02/25.
 //
 
-class Bindable<T> {
+public class Bindable<T> {
     
-    var value: T {
+    public var value: T {
         didSet {
             listener?(value)
         }
@@ -15,11 +15,11 @@ class Bindable<T> {
     
     private var listener: ((T) -> Void)?
     
-    init(_ value: T) {
+    public init(_ value: T) {
         self.value = value
     }
     
-    func bind(_ listener: @escaping (T) -> Void) {
+    public func bind(_ listener: @escaping (T) -> Void) {
         self.listener = listener
         listener(value)
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonManagers
 
 class IngredientCellView: UITableViewCell {
     
@@ -24,6 +25,6 @@ class IngredientCellView: UITableViewCell {
 extension IngredientCellView: ViewStylerProtocol {
     
     func configureViewStyles() {
-        AppThemeManager.shared.applyP2Style(to: ingredientLabel, color: ColorManager.shared.gray2)
+        AppThemeManager.shared.applyP2Style(to: ingredientLabel, color: ColorManager.gray2)
     }
 }

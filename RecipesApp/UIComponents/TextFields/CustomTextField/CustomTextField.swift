@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CommonHelpers
+import CommonManagers
 
 public class CustomTextField: UIView {
     
@@ -73,7 +75,7 @@ public class CustomTextField: UIView {
     private func setPlaceholderColor() {
         textField.attributedPlaceholder = NSAttributedString(
             string: textField.placeholder ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: ColorManager.shared.gray4]
+            attributes: [NSAttributedString.Key.foregroundColor: ColorManager.gray4]
         )
     }
     

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CommonHelpers
+import CommonManagers
 
 public protocol BackButtonConfigurable {
     /// Adds the back button to the view and sets up its constraints.
@@ -20,7 +22,9 @@ extension BackButtonConfigurable where Self: UIViewController {
     /// Back button that is added to the view.
     private var backButton: UIButton {
         let button = UIButton(type: .custom)
-        button.setImage(ImageManager.shared.image(named: ImageNames.icBackNormal), for: .normal)
+        Task {
+            await button.setImage(await ImageManager.shared.image(named: ImageNames.icBackNormal), for: .normal)
+        }
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
