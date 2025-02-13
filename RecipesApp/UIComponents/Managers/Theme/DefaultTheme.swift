@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CommonExtensions
+import CommonManagers
 
 public class DefaultTheme: ThemeProtocol {
     
@@ -55,8 +57,8 @@ public class DefaultTheme: ThemeProtocol {
     
     public func applyPrimaryButtonStyle(to button: UIButton, color: UIColor) {
         button.layer.cornerRadius = 4
-        button.backgroundColor = ColorManager.shared.secondary
-        button.setTitleColor(ColorManager.shared.white, for: .normal)
+        button.backgroundColor = ColorManager.secondary
+        button.setTitleColor(ColorManager.white, for: .normal)
         button.titleLabel?.font = .museoSansFont(type: .W500, size: 16)
         button.isUserInteractionEnabled = true
         button.isEnabled = true

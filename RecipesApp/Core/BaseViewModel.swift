@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import CommonHelpers
 
 class BaseViewModel {
     private(set) var loading: Bindable<Bool> = Bindable(false)

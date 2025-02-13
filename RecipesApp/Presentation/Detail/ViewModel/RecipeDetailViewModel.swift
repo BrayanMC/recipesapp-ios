@@ -5,6 +5,8 @@
 //  Created by Brayan Munoz Campos on 11/02/25.
 //
 
+import CommonHelpers
+
 class RecipeDetailViewModel: BaseViewModel {
     
     private let viewData: RecipeDetailViewData

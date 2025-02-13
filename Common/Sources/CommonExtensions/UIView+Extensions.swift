@@ -7,6 +7,8 @@
 
 import UIKit
 import SkeletonView
+import CommonHelpers
+import CommonManagers
 
 extension UIView {
     
@@ -41,7 +43,7 @@ extension UIView {
         }
     }
     
-    func addShadow(
+    public func addShadow(
         shadowColor: UIColor = ShadowValues.shadowColor,
         offset: CGSize = ShadowValues.shadowOffset,
         shadowRadius: CGFloat = ShadowValues.shadowRadius,
@@ -54,7 +56,7 @@ extension UIView {
         layer.masksToBounds = false
     }
     
-    func addTopShadow(
+    public func addTopShadow(
         shadowColor: UIColor = ShadowValues.shadowColor,
         offset: CGSize = ShadowValues.shadowOffset,
         shadowRadius: CGFloat = ShadowValues.shadowRadius,
@@ -85,15 +87,13 @@ extension UIView {
         endEditing(true)
     }
     
-    public func isShimmer(_ isActive: Bool, cornerRadius: Float = 0, height: CGFloat = 0) {
+    public func isShimmer(_ isActive: Bool, cornerRadius: Float = 0) {
         if isActive {
-            if (height > 0) {
-                SkeletonAppearance.default.multilineHeight = height
-            }
+            
             skeletonCornerRadius = cornerRadius
             isSkeletonable = true
             (self as? UILabel)?.linesCornerRadius = Int(cornerRadius)
-            let skeletonLayer = SkeletonGradient(baseColor: ColorManager.shared.gray4.withAlphaComponent(0.5))
+            let skeletonLayer = SkeletonGradient(baseColor: ColorManager.gray4.withAlphaComponent(0.5))
             showAnimatedGradientSkeleton(usingGradient: skeletonLayer)
         } else {
             hideSkeleton()
