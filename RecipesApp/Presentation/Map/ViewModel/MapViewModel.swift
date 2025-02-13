@@ -7,6 +7,8 @@
 
 import CoreLocation
 import CommonHelpers
+import Base
+import CommonManagers
 
 class MapViewModel: BaseViewModel {
     

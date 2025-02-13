@@ -7,6 +7,7 @@
 
 import UIKit
 import CommonHelpers
+import Base
 
 class HomeViewController: BaseViewController, Storyboarded {
 

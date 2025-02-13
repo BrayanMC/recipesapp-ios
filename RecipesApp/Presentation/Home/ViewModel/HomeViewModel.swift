@@ -7,6 +7,7 @@
 
 import RxSwift
 import CommonHelpers
+import Base
 
 class HomeViewModel: BaseViewModel {
     
