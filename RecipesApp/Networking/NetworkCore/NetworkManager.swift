@@ -7,6 +7,7 @@
 
 import Alamofire
 import RxSwift
+import Foundation
 
 class NetworkManager {
     
