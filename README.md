@@ -1,12 +1,13 @@
 # RecipesApp
 
-RecipesApp es una aplicación móvil construida bajo el concepto de la arquitectura de microapp, teniendo como núcleo a Swift Package Manager y utilizando la librería UIKit de Apple. Con Swift Package Manager (SPM), Xcode solo recompila los módulos que han sido modificados y sus dependencias directas, lo que mejora la eficiencia y reduce significativamente el tiempo de compilación.
+RecipesApp es una aplicación móvil que sigue la arquitectura de microapp, utilizando Swift Package Manager como núcleo y la librería UIKit de Apple. Con Swift Package Manager (SPM), Xcode solo recompila los módulos modificados y sus dependencias directas, mejorando la eficiencia y reduciendo significativamente el tiempo de compilación.
 
 ## Table of Contents
 - [Funcionalidades](#funcionalidades)
 - [Características](#características)
 - [Instalación](#instalación)
 - [Uso](#uso)
+- [Modularización](#modularización)
 
 ## Funcionalidades
 - Pantalla Lista de Recetas.
@@ -14,30 +15,48 @@ RecipesApp es una aplicación móvil construida bajo el concepto de la arquitect
 - Pantalla Ubicación de la Receta.
 
 ## Características
-- Arquitectura de microapp
-- Uso de Swift Package Manager
-- Interfaz de usuario con UIKit
+- Arquitectura de microapp utilizando Swift Package Manager.
+- Patrón MVVM.
+- Interfaz de usuario con UIKit.
+- Pruebas unitarias para las Views y View Models.
 
 ## Instalación
 Para instalar y configurar el proyecto, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/RecipesApp.git
+    git clone <URL_DEL_REPOSITORIO>
     ```
 2. Navega al directorio del proyecto:
     ```bash
-    cd RecipesApp
+    cd <NOMBRE_DEL_DIRECTORIO>
     ```
 3. Abre el proyecto en Xcode:
     ```bash
     open RecipesApp.xcodeproj
     ```
 
-## uso
+## Uso
 Para ejecutar la aplicación en un simulador o dispositivo, sigue estos pasos:
 
 1. Abre el proyecto en Xcode.
 2. Selecciona el esquema `RecipesApp`.
 3. Elige un simulador o dispositivo.
-4. Haz clic en el botón de `Run` o usa el atajo de teclado `Cmd + R`.
+4. Haz clic en el botón de Run o usa el atajo de teclado `Cmd + R`.
+
+## Modularización
+RecipesApp es una aplicación modularizada para asegurar la independencia entre sus componentes principales, facilitando el trabajo en equipo y la creación de pruebas unitarias.
+
+Para la modularización, se utiliza Swift Package Manager, una herramienta de Apple. Se decidió no usar CocoaPods debido a la disminución de soporte por parte de sus contribuidores.
+
+SPM permite gestionar fácilmente las dependencias mediante el archivo `Package.swift`, y Xcode solo recompila los módulos modificados y sus dependencias directas, mejorando la eficiencia y reduciendo significativamente el tiempo de compilación.
+
+El proyecto está dividido en 7 módulos:
+
+1. **UIComponents**: Contiene componentes personalizados y reutilizables en todo el proyecto.
+2. **DIContainer**: Incluye la clase que registra y proporciona las instancias para la inyección de dependencias.
+3. **Core**: Centraliza los métodos principales utilizados en el proyecto. Incluye clases base para reducir el código duplicado en las Views y ViewModels, la clase `BaseViewData` para facilitar el transporte de información entre features, y las clases `Factory` para la creación de ViewControllers y ViewModels.
+4. **Data**: Implementa el consumo de servicios web utilizando Alamofire y RxSwift para la gestión de procesos en segundo plano. Incluye la clase genérica `NetworkManager` para reutilizar la lógica de procesamiento de respuestas del servidor en todos los servicios web, siguiendo el patrón Repositorio.
+5. **Domain**: Contiene las clases con la lógica de negocio, como casos de uso y modelos.
+6. **Common**: Centraliza los métodos utilizados en todo el proyecto.
+7. **Features**: Incluye las pantallas `HomeView`, `RecipeDetailView` y `MapView`, cada una con su respectiva ViewModel. Cada feature tiene un archivo contenedor para proporcionar instancias de uso global. La clase `AppCoordinator` encapsula la inicialización de la app y maneja la navegación entre pantallas.
