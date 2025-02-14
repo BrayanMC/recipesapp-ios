@@ -10,6 +10,7 @@ import CommonHelpers
 import CommonManagers
 import CommonExtensions
 import Base
+import Models
 
 class RecipeDetailViewController: BaseViewController, Storyboarded, BackButtonConfigurable {
     

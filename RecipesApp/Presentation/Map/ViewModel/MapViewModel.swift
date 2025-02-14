@@ -9,6 +9,7 @@ import CoreLocation
 import CommonHelpers
 import Base
 import CommonManagers
+import Models
 
 class MapViewModel: BaseViewModel {
     

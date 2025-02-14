@@ -7,24 +7,24 @@
 
 import Networking
 
-struct Recipe: Decodable {
-    let id: Int
-    let name: String
-    let description: String
-    let ingredients: [String]
-    let image: String
-    let location: Location?
-    let preparationTime: String
+public struct Recipe: Decodable {
+    public let id: Int
+    public let name: String
+    public let description: String
+    public let ingredients: [String]
+    public let image: String
+    public let location: Location?
+    public let preparationTime: String
     
-    struct Location: Decodable {
-        let latitude: Double
-        let longitude: Double
+    public struct Location: Decodable {
+        public let latitude: Double
+        public let longitude: Double
     }
 }
 
 extension Recipe {
     
-    init(from response: RecipesResponse.RecipeResponse) {
+    public init(from response: RecipesResponse.RecipeResponse) {
         self.id = response.id ?? 0
         self.name = response.name ?? ""
         self.description = response.description ?? ""

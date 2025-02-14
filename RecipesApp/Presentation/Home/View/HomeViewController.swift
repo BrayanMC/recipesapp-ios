@@ -9,6 +9,7 @@ import UIKit
 import CommonHelpers
 import Base
 import Factories
+import Models
 
 class HomeViewController: BaseViewController, Storyboarded {
 

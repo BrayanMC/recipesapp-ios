@@ -6,6 +6,7 @@
 //
 
 import Base
+import Models
 
 struct MapViewData: BaseViewData {
     let recipe: Recipe

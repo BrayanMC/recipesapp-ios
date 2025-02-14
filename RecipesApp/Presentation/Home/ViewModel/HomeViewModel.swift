@@ -9,6 +9,8 @@ import RxSwift
 import CommonHelpers
 import Base
 import Networking
+import UseCases
+import Models
 
 class HomeViewModel: BaseViewModel {
     
