@@ -60,3 +60,13 @@ El proyecto está dividido en 7 módulos:
 5. **Domain**: Contiene las clases con la lógica de negocio, como casos de uso y modelos.
 6. **Common**: Centraliza los métodos utilizados en todo el proyecto.
 7. **Features**: Incluye las pantallas `HomeView`, `RecipeDetailView` y `MapView`, cada una con su respectiva ViewModel. Cada feature tiene un archivo contenedor para proporcionar instancias de uso global. La clase `AppCoordinator` encapsula la inicialización de la app y maneja la navegación entre pantallas.
+
+
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-02-14 at 16 34 40](https://github.com/user-attachments/assets/14a456b5-4133-4f81-ad7c-204df3862b2a)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-02-14 at 16 34 44](https://github.com/user-attachments/assets/c73e2ca6-9a67-44c4-add6-c4cab4699eb0)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-02-14 at 16 34 51](https://github.com/user-attachments/assets/7109c144-e51d-46a7-8057-9e276e152c87)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-02-14 at 16 35 03](https://github.com/user-attachments/assets/694629f8-ec95-49b6-8f75-1e6f009826da)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-02-14 at 16 35 07](https://github.com/user-attachments/assets/8112f134-c18e-4ab4-b4ee-0442a22ee0ac)
+
+
+
