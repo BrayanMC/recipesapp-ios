@@ -11,10 +11,19 @@ let package = Package(
         .library(
             name: "Base",
             targets: ["Base"]
-        )
+        ),
+        .library(
+            name: "Factories",
+            targets: ["Factories"]
+        ),
+        .library(
+            name: "Dependencies",
+            targets: ["Dependencies"]
+        ),
     ],
     dependencies: [
-        .package(path: "../Common")
+        .package(path: "../Common"),
+        .package(path: "../DIContainer")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,13 +33,26 @@ let package = Package(
             dependencies: [
                 .product(name: "CommonExtensions", package: "Common"),
                 .product(name: "CommonManagers", package: "Common"),
-                .product(name: "CommonHelpers", package: "Common"),
-                .product(name: "DI", package: "Common")
+                .product(name: "CommonHelpers", package: "Common")
+            ]
+        ),
+        .target(
+            name: "Factories",
+            dependencies: [
+                "Dependencies",
+                "Base",
+                .product(name: "DIContainer", package: "DIContainer")
+            ]
+        ),
+        .target(
+            name: "Dependencies",
+            dependencies: [
+                "Base"
             ]
         ),
         .testTarget(
             name: "CoreTests",
-            dependencies: [""]
+            dependencies: ["Base"]
         ),
     ]
 )

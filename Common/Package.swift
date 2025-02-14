@@ -24,10 +24,6 @@ let package = Package(
             name: "CommonManagers",
             targets: ["CommonManagers"]
         ),
-        .library(
-            name: "DI",
-            targets: ["DI"]
-        ),
     ],
     dependencies: [
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.1.0"),
@@ -53,10 +49,6 @@ let package = Package(
         ),
         .target(
             name: "CommonManagers",
-            dependencies: []
-        ),
-        .target(
-            name: "DI",
             dependencies: []
         ),
         .testTarget(

@@ -6,12 +6,13 @@
 //
 
 import UIKit
-import DI
+import DIContainer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     let diContainer = DIContainer()
+    var appCoordinator: AppCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,14 +22,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         initAppTheme()
-        
         initMonitoring()
-        
         setupDIContainer()
                 
         window = UIWindow(windowScene: windowScene)
-        let homeController = buildHomeScreen()
-        window?.rootViewController = homeController
+        let navigationController = UINavigationController()
+        appCoordinator = AppCoordinator(
+            navigationController: navigationController,
+            diContainer: diContainer
+        )
+        appCoordinator?.start()
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
@@ -66,12 +71,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func initAppTheme() {
         let defaultTheme = DefaultTheme()
         AppThemeManager.shared.setAppTheme(theme: defaultTheme)
-    }
-
-    private func buildHomeScreen() -> UINavigationController {
-        let viewController = ViewControllerFactory.makeHomeViewController(diContainer: diContainer)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        return navigationController
     }
     
     private func initMonitoring() {

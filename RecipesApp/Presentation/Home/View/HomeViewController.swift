@@ -8,6 +8,7 @@
 import UIKit
 import CommonHelpers
 import Base
+import Factories
 
 class HomeViewController: BaseViewController, Storyboarded {
 
@@ -21,6 +22,7 @@ class HomeViewController: BaseViewController, Storyboarded {
     
     private var viewModel: HomeViewModel?
     private var alertFactory: AlertFactory?
+    var appCoordinator: AppCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,18 +101,7 @@ class HomeViewController: BaseViewController, Storyboarded {
     }
     
     public func navigateToDetail(with recipe: Recipe) {
-        guard let sceneDelegate = UIApplication.shared.connectedScenes
-            .first?.delegate as? SceneDelegate else {
-            return
-        }
-        
-        let viewData = RecipeDetailViewData(recipe: recipe)
-        let viewController = ViewControllerFactory.makeRecipeDetailViewController(
-            with: viewData,
-            diContainer: sceneDelegate.diContainer
-        )
-        
-        navigationController?.pushViewController(viewController, animated: true)
+        appCoordinator?.navigateToDetail(with: recipe)
     }
     
     @objc private func refreshRecipesData(_ sender: Any) {

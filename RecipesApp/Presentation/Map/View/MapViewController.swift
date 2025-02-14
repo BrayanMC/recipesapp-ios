@@ -16,6 +16,7 @@ class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurab
     private var viewModel: MapViewModel?
     private var alertFactory: AlertFactory?
     private var settingsAlertFactory: AlertFactory?
+    var appCoordinator: AppCoordinator?
     
     private let mapView: MKMapView = {
         let map = MKMapView()
