@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8406612C2D5EE6C900239B2B /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612B2D5EE6C900239B2B /* Networking */; };
 		8406612E2D5EE78000239B2B /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612D2D5EE78000239B2B /* Repositories */; };
+		841057F72D5EF5D500D403F7 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F62D5EF5D500D403F7 /* Features */; };
+		841057F92D5EF5D500D403F7 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F82D5EF5D500D403F7 /* UIComponents */; };
+		841057FB2D5F1A4D00D403F7 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 841057FA2D5F1A4D00D403F7 /* Helpers */; };
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
@@ -44,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		840661282D5EE2F800239B2B /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		841057F32D5EF4F900D403F7 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		8438FEF32D5EEA8500A2AD2A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		84B0A6442D5E902B00D6D3DA /* DIContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DIContainer; sourceTree = "<group>"; };
 		84D6F6EC2D5B08FD002381AC /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,23 +62,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Presentation/Detail/RecipeDetailFeatureDIContainer.swift,
-				Presentation/Detail/View/IngredientCell/IngredientCellView.swift,
-				Presentation/Detail/View/IngredientCell/IngredientCellView.xib,
-				Presentation/Detail/View/RecipeDetailViewController.storyboard,
-				Presentation/Home/HomeFeatureDIContainer.swift,
-				Presentation/Home/View/HomeViewController.storyboard,
-				Presentation/Home/View/RecipeCell/RecipeCellView.swift,
-				Presentation/Home/View/RecipeCell/RecipeCellView.xib,
-				Presentation/Home/ViewModel/HomeViewModel.swift,
-				Presentation/Map/MapFeatureDiContainer.swift,
-				Presentation/Map/View/MapViewController.storyboard,
+				Resources/Assets/Assets.xcassets,
 				Resources/Assets/Colors.xcassets,
 				"Resources/Fonts/MuseoSans-300.otf",
 				"Resources/Fonts/MuseoSans-500.otf",
 				"Resources/Fonts/MuseoSans-700.otf",
-				UIComponents/TextFields/CustomTextField/CustomTextField.swift,
-				UIComponents/TextFields/CustomTextField/CustomTextField.xib,
 			);
 			target = 84D6F7012D5B08FE002381AC /* RecipesAppTests */;
 		};
@@ -82,23 +74,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Presentation/Detail/RecipeDetailFeatureDIContainer.swift,
-				Presentation/Detail/View/IngredientCell/IngredientCellView.swift,
-				Presentation/Detail/View/IngredientCell/IngredientCellView.xib,
-				Presentation/Detail/View/RecipeDetailViewController.storyboard,
-				Presentation/Home/HomeFeatureDIContainer.swift,
-				Presentation/Home/View/HomeViewController.storyboard,
-				Presentation/Home/View/RecipeCell/RecipeCellView.swift,
-				Presentation/Home/View/RecipeCell/RecipeCellView.xib,
-				Presentation/Home/ViewModel/HomeViewModel.swift,
-				Presentation/Map/MapFeatureDiContainer.swift,
-				Presentation/Map/View/MapViewController.storyboard,
+				Resources/Assets/Assets.xcassets,
 				Resources/Assets/Colors.xcassets,
 				"Resources/Fonts/MuseoSans-300.otf",
 				"Resources/Fonts/MuseoSans-500.otf",
 				"Resources/Fonts/MuseoSans-700.otf",
-				UIComponents/TextFields/CustomTextField/CustomTextField.swift,
-				UIComponents/TextFields/CustomTextField/CustomTextField.xib,
 			);
 			target = 84D6F70B2D5B08FE002381AC /* RecipesAppUITests */;
 		};
@@ -140,6 +120,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DD53E82D5EEC68001004C8 /* Models in Frameworks */,
+				841057F72D5EF5D500D403F7 /* Features in Frameworks */,
+				841057F92D5EF5D500D403F7 /* UIComponents in Frameworks */,
 				8406612E2D5EE78000239B2B /* Repositories in Frameworks */,
 				84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */,
 				84F2FA972D5E5D7200BDB49E /* CommonHelpers in Frameworks */,
@@ -148,6 +130,7 @@
 				84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */,
 				84F2F45A2D5DBABC00BDB49E /* Alamofire in Frameworks */,
 				84F2FA992D5E5D7200BDB49E /* CommonProtocols in Frameworks */,
+				841057FB2D5F1A4D00D403F7 /* Helpers in Frameworks */,
 				84F2FB7D2D5E638B00BDB49E /* CommonManagers in Frameworks */,
 				84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */,
 				84B0A6562D5E971500D6D3DA /* Factories in Frameworks */,
@@ -178,6 +161,7 @@
 		84D6F6E32D5B08FD002381AC = {
 			isa = PBXGroup;
 			children = (
+				841057F32D5EF4F900D403F7 /* Features */,
 				8438FEF32D5EEA8500A2AD2A /* Domain */,
 				840661282D5EE2F800239B2B /* Data */,
 				84B0A6442D5E902B00D6D3DA /* DIContainer */,
@@ -726,6 +710,18 @@
 		8406612D2D5EE78000239B2B /* Repositories */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Repositories;
+		};
+		841057F62D5EF5D500D403F7 /* Features */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Features;
+		};
+		841057F82D5EF5D500D403F7 /* UIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIComponents;
+		};
+		841057FA2D5F1A4D00D403F7 /* Helpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Helpers;
 		};
 		84B0A6552D5E971500D6D3DA /* Factories */ = {
 			isa = XCSwiftPackageProductDependency;

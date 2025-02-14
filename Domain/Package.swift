@@ -27,6 +27,7 @@ let package = Package(
         .target(
             name: "UseCases",
             dependencies: [
+                "Models",
                 .product(name: "RxSwift", package: "RxSwift"),
                 .product(name: "Repositories", package: "Data"),
             ]
