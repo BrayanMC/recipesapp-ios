@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		840661282D5EE2F800239B2B /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 		841057F32D5EF4F900D403F7 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
+		841058122D5F298400D403F7 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		8438FEF32D5EEA8500A2AD2A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		84B0A6442D5E902B00D6D3DA /* DIContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DIContainer; sourceTree = "<group>"; };
 		84D6F6EC2D5B08FD002381AC /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +162,7 @@
 		84D6F6E32D5B08FD002381AC = {
 			isa = PBXGroup;
 			children = (
+				841058122D5F298400D403F7 /* UIComponents */,
 				841057F32D5EF4F900D403F7 /* Features */,
 				8438FEF32D5EEA8500A2AD2A /* Domain */,
 				840661282D5EE2F800239B2B /* Data */,

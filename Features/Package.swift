@@ -13,16 +13,11 @@ let package = Package(
             targets: ["Features"]
         ),
         .library(
-            name: "UIComponents",
-            targets: ["UIComponents"]
-        ),
-        .library(
             name: "Helpers",
             targets: ["Helpers"]
         ),
     ],
     dependencies: [
-        .package(path: "../Common"),
         .package(path: "../Core"),
         .package(path: "../Domain"),
         .package(path: "../DIContainer"),
@@ -33,7 +28,6 @@ let package = Package(
         .target(
             name: "Features",
             dependencies: [
-                "UIComponents",
                 "Helpers",
                 .product(name: "Dependencies", package: "Core"),
                 .product(name: "Factories", package: "Core"),
@@ -49,21 +43,6 @@ let package = Package(
                 .process("Detail/View/IngredientCell/IngredientCellView.xib"),
                 .process("Map/View/MapViewController.storyboard"),
             ]
-        ),
-        .target(
-            name: "UIComponents",
-            dependencies: [
-                .product(name: "CommonHelpers", package: "Common"),
-                .product(name: "CommonManagers", package: "Common"),
-                .product(name: "CommonExtensions", package: "Common"),
-            ]//,
-            //path: "Sources/UIComponents",
-            //resources: [
-            //    .process("TextFields/CustomTextField/CustomTextField.xib"),
-            //   .process("Resources/Fonts/MuseoSans-300.otf"),
-            //   .process("Resources/Fonts/MuseoSans-500.otf"),
-            //   .process("Resources/Fonts/MuseoSans-700.otf"),
-            //]
         ),
         .target(
             name: "Helpers"
