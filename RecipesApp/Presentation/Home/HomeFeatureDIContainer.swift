@@ -9,6 +9,8 @@ import DIContainer
 import UIKit
 import Dependencies
 import Base
+import Repositories
+import Networking
 
 public class HomeFeatureDIContainer: HomeFeatureDependencies {
     
@@ -16,6 +18,15 @@ public class HomeFeatureDIContainer: HomeFeatureDependencies {
 
     public init(diContainer: DIContainer) {
         self.diContainer = diContainer
+        
+        let networkManager = NetworkManager()
+        diContainer.register(type: NetworkManager.self, service: networkManager)
+        
+        let remoteRecipesRepository = RemoteRecipesRepository(networkManager: networkManager)
+        diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository)
+        
+        let fetchRecipesUseCase = FetchRecipesUseCase(recipesRepository: remoteRecipesRepository)
+        diContainer.register(type: FetchRecipesUseCase.self, service: fetchRecipesUseCase)
     }
 
     @MainActor public func makeHomeViewController() -> UIViewController? {

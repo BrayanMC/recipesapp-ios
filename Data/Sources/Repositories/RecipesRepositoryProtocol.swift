@@ -6,8 +6,9 @@
 //
 
 import RxSwift
+import Networking
 
-protocol RecipesRepositoryProtocol {
+public protocol RecipesRepositoryProtocol {
     func fetchRecipes() -> Single<RecipesResponse>
     func fetchRecipeDetail(request: FetchRecipeRequest) -> Single<RecipesResponse.RecipeResponse>
 }

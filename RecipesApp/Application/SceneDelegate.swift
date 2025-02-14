@@ -8,6 +8,7 @@
 import UIKit
 import CommonHelpers
 import DIContainer
+import Networking
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -24,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         initAppTheme()
         initMonitoring()
-        setupDIContainer()
         
         let alertFactory = DefaultAlertFactory()
         let settingsAlertFactory = SettingsAlertFactory()
@@ -81,16 +81,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func initMonitoring() {
         NetworkMonitor.shared.startMonitoring()
-    }
-    
-    private func setupDIContainer() {
-        let networkManager = NetworkManager()
-        diContainer.register(type: NetworkManager.self, service: networkManager)
-        
-        let remoteRecipesRepository = RemoteRecipesRepository(networkManager: networkManager)
-        diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository)
-        
-        let fetchRecipesUseCase = FetchRecipesUseCase(recipesRepository: remoteRecipesRepository)
-        diContainer.register(type: FetchRecipesUseCase.self, service: fetchRecipesUseCase)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Repositories
 
 class FetchRecipesUseCase {
     

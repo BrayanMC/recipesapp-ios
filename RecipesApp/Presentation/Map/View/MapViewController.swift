@@ -102,10 +102,12 @@ class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurab
     }
     
     private func addMarker(for recipe: Recipe) {
+        guard let location = recipe.location else { return }
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(
-            latitude: recipe.location.latitude,
-            longitude: recipe.location.longitude
+            latitude: location.latitude,
+            longitude: location.longitude
         )
         mapView.addAnnotation(annotation)
         

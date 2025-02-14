@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8406612C2D5EE6C900239B2B /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612B2D5EE6C900239B2B /* Networking */; };
+		8406612E2D5EE78000239B2B /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612D2D5EE78000239B2B /* Repositories */; };
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840661282D5EE2F800239B2B /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 		84B0A6442D5E902B00D6D3DA /* DIContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DIContainer; sourceTree = "<group>"; };
 		84D6F6EC2D5B08FD002381AC /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D6F7022D5B08FE002381AC /* RecipesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,13 +55,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Networking/DTOs/ErrorResponse.swift,
-				Networking/DTOs/Recipes/Responses/RecipeResponse.swift,
-				Networking/NetworkCore/Endpoint.swift,
-				Networking/NetworkCore/NetworkManager.swift,
-				Networking/NetworkCore/NetworkMonitor.swift,
-				Networking/NetworkHelpers/Error/ErrorCode.swift,
-				Networking/NetworkHelpers/Error/ErrorTitle.swift,
 				Presentation/Detail/RecipeDetailFeatureDIContainer.swift,
 				Presentation/Detail/View/IngredientCell/IngredientCellView.swift,
 				Presentation/Detail/View/IngredientCell/IngredientCellView.xib,
@@ -83,13 +79,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"/Localized: Resources/Localizable.strings",
-				Networking/DTOs/ErrorResponse.swift,
-				Networking/DTOs/Recipes/Responses/RecipeResponse.swift,
-				Networking/NetworkCore/Endpoint.swift,
-				Networking/NetworkCore/NetworkManager.swift,
-				Networking/NetworkCore/NetworkMonitor.swift,
-				Networking/NetworkHelpers/Error/ErrorCode.swift,
-				Networking/NetworkHelpers/Error/ErrorTitle.swift,
 				Presentation/Detail/RecipeDetailFeatureDIContainer.swift,
 				Presentation/Detail/View/IngredientCell/IngredientCellView.swift,
 				Presentation/Detail/View/IngredientCell/IngredientCellView.xib,
@@ -147,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8406612E2D5EE78000239B2B /* Repositories in Frameworks */,
 				84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */,
 				84F2FA972D5E5D7200BDB49E /* CommonHelpers in Frameworks */,
 				84F2FA952D5E5ABA00BDB49E /* CommonExtensions in Frameworks */,
@@ -158,6 +148,7 @@
 				84B0A6562D5E971500D6D3DA /* Factories in Frameworks */,
 				84F2F45D2D5DBAEB00BDB49E /* RxSwift in Frameworks */,
 				84F2F3502D5DBA3700BDB49E /* SkeletonView in Frameworks */,
+				8406612C2D5EE6C900239B2B /* Networking in Frameworks */,
 				84F2FC602D5E7FBF00BDB49E /* Base in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +173,7 @@
 		84D6F6E32D5B08FD002381AC = {
 			isa = PBXGroup;
 			children = (
+				840661282D5EE2F800239B2B /* Data */,
 				84B0A6442D5E902B00D6D3DA /* DIContainer */,
 				84F2FC5E2D5E7D9700BDB49E /* Core */,
 				84F2FA902D5DD6E000BDB49E /* Common */,
@@ -721,6 +713,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8406612B2D5EE6C900239B2B /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		8406612D2D5EE78000239B2B /* Repositories */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Repositories;
+		};
 		84B0A6552D5E971500D6D3DA /* Factories */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Factories;

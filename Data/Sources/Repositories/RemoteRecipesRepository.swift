@@ -6,21 +6,22 @@
 //
 
 import RxSwift
+import Networking
 
-class RemoteRecipesRepository: RecipesRepositoryProtocol {
+public class RemoteRecipesRepository: RecipesRepositoryProtocol {
     
     private let networkManager: NetworkManager
     
-    init(networkManager: NetworkManager) {
+    public init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
     
-    func fetchRecipes() -> Single<RecipesResponse> {
+    public func fetchRecipes() -> Single<RecipesResponse> {
         let endpoint = Endpoint.Recipes.all()
         return networkManager.request(endpoint.urlString)
     }
     
-    func fetchRecipeDetail(request: FetchRecipeRequest) -> Single<RecipesResponse.RecipeResponse> {
+    public func fetchRecipeDetail(request: FetchRecipeRequest) -> Single<RecipesResponse.RecipeResponse> {
         let endpoint = Endpoint.Recipes.recipeDetailWithId(request.recipeId)
         return networkManager.request(endpoint.urlString)
     }
