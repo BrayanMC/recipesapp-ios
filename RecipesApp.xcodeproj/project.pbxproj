@@ -12,10 +12,16 @@
 		841057F72D5EF5D500D403F7 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F62D5EF5D500D403F7 /* Features */; };
 		841057FB2D5F1A4D00D403F7 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 841057FA2D5F1A4D00D403F7 /* Helpers */; };
 		841058142D5F2D3F00D403F7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 841058132D5F2D3F00D403F7 /* DesignSystem */; };
+		8476143E2D5F870900335E18 /* DataMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 8476143D2D5F870900335E18 /* DataMocks */; };
+		847F4E0C2D5F4DF30067BA5E /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0B2D5F4DF30067BA5E /* Repositories */; };
+		847F4E0E2D5F4E050067BA5E /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0D2D5F4E050067BA5E /* Models */; };
+		847F4E102D5F4E050067BA5E /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0F2D5F4E050067BA5E /* UseCases */; };
+		847F4E122D5F5B150067BA5E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E112D5F5B150067BA5E /* Networking */; };
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
 		84B265F52D5F39CF000A256C /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 84B265F42D5F39CF000A256C /* SkeletonView */; };
+		84C22D382D5FC27F005D77DB /* DomainMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 84C22D372D5FC27F005D77DB /* DomainMocks */; };
 		84DD53E82D5EEC68001004C8 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E72D5EEC68001004C8 /* Models */; };
 		84DD53EA2D5EEC68001004C8 /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E92D5EEC68001004C8 /* UseCases */; };
 		84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2F34C2D5DB9C100BDB49E /* SDWebImage */; };
@@ -138,6 +144,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847F4E102D5F4E050067BA5E /* UseCases in Frameworks */,
+				847F4E0E2D5F4E050067BA5E /* Models in Frameworks */,
+				84C22D382D5FC27F005D77DB /* DomainMocks in Frameworks */,
+				8476143E2D5F870900335E18 /* DataMocks in Frameworks */,
+				847F4E122D5F5B150067BA5E /* Networking in Frameworks */,
+				847F4E0C2D5F4DF30067BA5E /* Repositories in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +737,26 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
 		};
+		8476143D2D5F870900335E18 /* DataMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataMocks;
+		};
+		847F4E0B2D5F4DF30067BA5E /* Repositories */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Repositories;
+		};
+		847F4E0D2D5F4E050067BA5E /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		847F4E0F2D5F4E050067BA5E /* UseCases */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UseCases;
+		};
+		847F4E112D5F5B150067BA5E /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
 		84B0A6552D5E971500D6D3DA /* Factories */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Factories;
@@ -741,6 +773,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84B265F32D5F39CF000A256C /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		84C22D372D5FC27F005D77DB /* DomainMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainMocks;
 		};
 		84DD53E72D5EEC68001004C8 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;

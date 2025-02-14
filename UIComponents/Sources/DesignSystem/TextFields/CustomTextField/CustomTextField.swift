@@ -187,6 +187,6 @@ public class CustomTextField: UIView {
 extension CustomTextField: ViewStylerProtocol {
     
     public func configureViewStyles() {
-        textField.font = .museoSansFont(type: .W300, size: 16)
+        //textField.font = .museoSansFont(type: .W300, size: 16)
     }
 }

@@ -36,6 +36,7 @@ let package = Package(
         .target(
             name: "CommonExtensions",
             dependencies: [
+                "CommonProtocols",
                 .product(name: "SDWebImage", package: "SDWebImage"),
                 .product(name: "SkeletonView", package: "SkeletonView"),
                 .product(name: "DesignSystem", package: "UIComponents"),

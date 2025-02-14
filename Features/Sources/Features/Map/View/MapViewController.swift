@@ -19,7 +19,7 @@ public class MapViewController: BaseViewController, Storyboarded, CloseButtonCon
     private var viewModel: MapViewModel?
     var appCoordinator: AppCoordinator?
     
-    private let mapView: MKMapView = {
+    let mapView: MKMapView = {
         let map = MKMapView()
         map.overrideUserInterfaceStyle = .dark
         return map

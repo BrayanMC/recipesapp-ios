@@ -16,6 +16,10 @@ let package = Package(
             name: "Networking",
             targets: ["Networking"]
         ),
+        .library(
+            name: "DataMocks",
+            targets: ["DataMocks"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.8.0"),
@@ -35,6 +39,14 @@ let package = Package(
             name: "Networking",
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "RxSwift", package: "RxSwift"),
+            ]
+        ),
+        .target(
+            name: "DataMocks",
+            dependencies: [
+                "Repositories",
+                "Networking",
                 .product(name: "RxSwift", package: "RxSwift"),
             ]
         ),

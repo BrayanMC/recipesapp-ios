@@ -13,12 +13,12 @@ import Models
 
 class MapViewModel: BaseViewModel {
     
-    var recipe: Bindable<Recipe?> = Bindable(nil)
-    var authorizationStatus: Bindable<CLAuthorizationStatus?> = Bindable(nil)
-    var locationUpdate: Bindable<CLLocation?> = Bindable(nil)
-    var locationServicesDisabled: Bindable<Bool> = Bindable(false)
+    private(set) var recipe: Bindable<Recipe?> = Bindable(nil)
+    private(set) var authorizationStatus: Bindable<CLAuthorizationStatus?> = Bindable(nil)
+    private(set) var locationUpdate: Bindable<CLLocation?> = Bindable(nil)
+    private(set) var locationServicesDisabled: Bindable<Bool> = Bindable(false)
     
-    private let viewData: MapViewData
+    public let viewData: MapViewData
     private let locationManager = LocationManager()
     
     init(viewData: MapViewData) {

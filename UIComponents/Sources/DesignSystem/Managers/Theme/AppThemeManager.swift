@@ -32,7 +32,7 @@ public final class AppThemeManager {
     
     public func applyTextLargeStyle(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply TextLarge styles")
             return
         }
         theme.applyTextLargeStyle(to: label, color: color)
@@ -40,7 +40,7 @@ public final class AppThemeManager {
     
     public func applyTextMediumStyle(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply TextMedium styles")
             return
         }
         theme.applyTextMediumStyle(to: label, color: color)
@@ -48,7 +48,7 @@ public final class AppThemeManager {
     
     public func applyTextSmallStyle(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply TextSmall styles")
             return
         }
         theme.applyTextSmallStyle(to: label, color: color)
@@ -56,7 +56,7 @@ public final class AppThemeManager {
     
     public func applyH2Style(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply H2 styles")
             return
         }
         theme.applyH2Style(to: label, color: color)
@@ -64,7 +64,7 @@ public final class AppThemeManager {
     
     public func applyH3Style(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply H3 styles")
             return
         }
         theme.applyH3Style(to: label, color: color)
@@ -72,7 +72,7 @@ public final class AppThemeManager {
     
     public func applyP2Style(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply P2 styles")
             return
         }
         theme.applyP2Style(to: label, color: color)
@@ -80,7 +80,7 @@ public final class AppThemeManager {
     
     public func applyP3Style(to label: UILabel, color: UIColor = ColorManager.black) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply P3 styles")
             return
         }
         theme.applyP3Style(to: label, color: color)
@@ -88,7 +88,7 @@ public final class AppThemeManager {
     
     public func applyPrimaryButtonStyle(to button: UIButton, color: UIColor = ColorManager.white) {
         guard let theme = theme else {
-            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply styles")
+            debugPrint("Error - Theme must be setup using setAppTheme(_) before trying to apply PrimaryButton styles")
             return
         }
         theme.applyPrimaryButtonStyle(to: button, color: color)

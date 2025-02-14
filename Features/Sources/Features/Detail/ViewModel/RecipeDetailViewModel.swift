@@ -13,7 +13,7 @@ class RecipeDetailViewModel: BaseViewModel {
     
     private let viewData: RecipeDetailViewData
     
-    private(set) var recipeDetail: Bindable<Recipe?> = Bindable(nil)
+    public private(set) var recipeDetail: Bindable<Recipe?> = Bindable(nil)
     
     init(viewData: RecipeDetailViewData) {
         self.viewData = viewData

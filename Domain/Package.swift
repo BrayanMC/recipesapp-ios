@@ -16,6 +16,10 @@ let package = Package(
             name: "Models",
             targets: ["Models"]
         ),
+        .library(
+            name: "DomainMocks",
+            targets: ["DomainMocks"]
+        ),
     ],
     dependencies: [
         .package(path: "../Data"),
@@ -36,6 +40,14 @@ let package = Package(
             name: "Models",
             dependencies: [
                 .product(name: "Networking", package: "Data"),
+            ]
+        ),
+        .target(
+            name: "DomainMocks",
+            dependencies: [
+                "Models",
+                .product(name: "Networking", package: "Data"),
+                .product(name: "RxSwift", package: "RxSwift"),
             ]
         ),
         .testTarget(

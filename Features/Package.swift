@@ -22,6 +22,7 @@ let package = Package(
         .package(path: "../Domain"),
         .package(path: "../DIContainer"),
         .package(path: "../UIComponents"),
+        .package(path: "../Data"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -51,7 +52,14 @@ let package = Package(
         ),
         .testTarget(
             name: "FeaturesTests",
-            dependencies: ["Features"]
+            dependencies: [
+                "Features",
+                .product(name: "UseCases", package: "Domain"),
+                .product(name: "Models", package: "Domain"),
+                .product(name: "Repositories", package: "Data"),
+                .product(name: "DataMocks", package: "Data"),
+                .product(name: "DomainMocks", package: "Domain"),
+            ]
         ),
     ]
 )
