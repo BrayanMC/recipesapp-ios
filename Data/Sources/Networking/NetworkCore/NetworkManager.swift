@@ -9,7 +9,7 @@ import Alamofire
 import RxSwift
 import Foundation
 
-class NetworkManager {
+public class NetworkManager {
     
     private let session: Session
     
@@ -20,7 +20,7 @@ class NetworkManager {
         session = Session(configuration: configuration)
     }
     
-    func request<T: Decodable>(_ url: String, method: HTTPMethod = .get, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> Single<T> {
+    public func request<T: Decodable>(_ url: String, method: HTTPMethod = .get, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> Single<T> {
         return Single<T>.create { single in
             guard NetworkMonitor.shared.isConnected else {
                 single(.failure(APIError(

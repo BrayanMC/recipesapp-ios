@@ -7,7 +7,7 @@
 
 import Network
 
-public final class NetworkMonitor {
+public final class NetworkMonitor: @unchecked Sendable {
     
     public static let shared = NetworkMonitor()
     
@@ -30,8 +30,9 @@ public final class NetworkMonitor {
     
     public func startMonitoring() {
         self.monitor.pathUpdateHandler = { [weak self] path in
-            self?.isConnected = path.status != .unsatisfied
-            self?.getConnectionType(path)
+            guard let self = self else { return }
+            self.isConnected = path.status != .unsatisfied
+            self.getConnectionType(path)
         }
         self.monitor.start(queue: queue)
     }
