@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol AlertFactory {
+public protocol AlertFactory {
     func createAlert(title: String, message: String) -> UIAlertController
 }

@@ -27,10 +27,8 @@ public class MapFeatureDIContainer: MapFeatureDependencies {
             return nil
         }
         
-        let alertFactory = diContainer.resolve(type: AlertFactory.self)!
-        let settingsAlertFactory = diContainer.resolve(type: AlertFactory.self)!
         let viewController = MapViewController.instantiateFromStoryboard(storyboardName: "MapViewController")
-        viewController.configure(with: viewModel, alertFactory: alertFactory, settingsAlertFactory: settingsAlertFactory)
+        viewController.configure(with: viewModel)
         return viewController
     }
     

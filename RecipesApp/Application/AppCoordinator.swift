@@ -9,6 +9,7 @@ import UIKit
 import DIContainer
 import Factories
 import Dependencies
+import CommonHelpers
 
 @MainActor
 class AppCoordinator {
@@ -16,10 +17,19 @@ class AppCoordinator {
     private let navigationController: UINavigationController
     private let diContainer: DIContainer
     let viewControllerFactory: ViewControllerFactory
+    let alertFactory: AlertFactory
+    let settingsAlertFactory: AlertFactory
 
-    init(navigationController: UINavigationController, diContainer: DIContainer) {
+    init(
+        navigationController: UINavigationController,
+        diContainer: DIContainer,
+        alertFactory: AlertFactory,
+        settingsAlertFactory: AlertFactory
+    ) {
         self.navigationController = navigationController
         self.diContainer = diContainer
+        self.alertFactory = alertFactory
+        self.settingsAlertFactory = settingsAlertFactory
         
         let homeDiContainer: HomeFeatureDependencies = HomeFeatureDIContainer(diContainer: diContainer)
         let recipeDetailDiContainer: RecipeDetailFeatureDependencies = RecipeDetailFeatureDIContainer(diContainer: diContainer)
@@ -62,5 +72,15 @@ class AppCoordinator {
         
         viewController.appCoordinator = self
         navigationController.viewControllers.last?.presentInNavigationController(viewController: viewController)
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = alertFactory.createAlert(title: title, message: message)
+        navigationController.present(alert, animated: true, completion: nil)
+    }
+    
+    func showSettingsAlert(title: String, message: String) {
+        let alert = settingsAlertFactory.createAlert(title: title, message: message)
+        navigationController.present(alert, animated: true, completion: nil)
     }
 }

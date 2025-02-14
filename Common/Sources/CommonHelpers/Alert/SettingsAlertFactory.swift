@@ -7,9 +7,13 @@
 
 import UIKit
 
-class SettingsAlertFactory: AlertFactory {
+public class SettingsAlertFactory: @preconcurrency AlertFactory {
     
-    func createAlert(title: String, message: String) -> UIAlertController {
+    public init() {
+        // empty
+    }
+    
+    @MainActor public func createAlert(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in

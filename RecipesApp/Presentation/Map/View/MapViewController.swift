@@ -14,8 +14,6 @@ import Base
 class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurable {
     
     private var viewModel: MapViewModel?
-    private var alertFactory: AlertFactory?
-    private var settingsAlertFactory: AlertFactory?
     var appCoordinator: AppCoordinator?
     
     private let mapView: MKMapView = {
@@ -37,10 +35,8 @@ class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurab
         viewModel?.stopUpdatingLocation()
     }
     
-    func configure(with viewModel: MapViewModel, alertFactory: AlertFactory, settingsAlertFactory: AlertFactory) {
+    func configure(with viewModel: MapViewModel) {
         self.viewModel = viewModel
-        self.alertFactory = alertFactory
-        self.settingsAlertFactory = settingsAlertFactory
     }
     
     private func setupView() {
@@ -118,19 +114,17 @@ class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurab
     }
     
     private func showLocationServicesDisabledAlert() {
-        if let alert = alertFactory?.createAlert(title: "Servicios de Ubicación Desactivados", message: "Por favor, habilita los servicios de ubicación en Configuración.") {
-            present(alert, animated: true, completion: nil)
-        } else {
-            print("No se pudo crear la alerta de servicios de ubicación desactivados.")
-        }
+        appCoordinator?.showAlert(
+            title: "Servicios de Ubicación Desactivados",
+            message: "Por favor, habilita los servicios de ubicación en Configuración."
+        )
     }
 
     private func showLocationPermissionAlert() {
-        if let alert = settingsAlertFactory?.createAlert(title: "Permiso de Ubicación Denegado", message: "Por favor, habilita los permisos de ubicación en Configuración.") {
-            present(alert, animated: true, completion: nil)
-        } else {
-            print("No se pudo crear la alerta de permiso de ubicación denegado.")
-        }
+        appCoordinator?.showSettingsAlert(
+            title: "Permiso de Ubicación Denegado",
+            message: "Por favor, habilita los permisos de ubicación en Configuración."
+        )
     }
     
     @objc func closeButtonTapped() {

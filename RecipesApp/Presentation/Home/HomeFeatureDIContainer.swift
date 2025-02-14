@@ -23,9 +23,8 @@ public class HomeFeatureDIContainer: HomeFeatureDependencies {
             return nil
         }
         
-        let alertFactory = diContainer.resolve(type: AlertFactory.self)!
         let viewController = HomeViewController.instantiateFromStoryboard(storyboardName: "HomeViewController")
-        viewController.configure(with: viewModel, alertFactory: alertFactory)
+        viewController.configure(with: viewModel)
         return viewController
     }
     

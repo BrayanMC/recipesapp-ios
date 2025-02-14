@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonHelpers
 import DIContainer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -24,12 +25,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         initAppTheme()
         initMonitoring()
         setupDIContainer()
-                
+        
+        let alertFactory = DefaultAlertFactory()
+        let settingsAlertFactory = SettingsAlertFactory()
+        
         window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(
             navigationController: navigationController,
-            diContainer: diContainer
+            diContainer: diContainer,
+            alertFactory: alertFactory,
+            settingsAlertFactory: settingsAlertFactory
         )
         appCoordinator?.start()
         
@@ -78,9 +84,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func setupDIContainer() {
-        diContainer.register(type: AlertFactory.self, service: DefaultAlertFactory())
-        diContainer.register(type: AlertFactory.self, service: SettingsAlertFactory())
-        
         let networkManager = NetworkManager()
         diContainer.register(type: NetworkManager.self, service: networkManager)
         

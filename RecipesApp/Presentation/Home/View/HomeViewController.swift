@@ -21,7 +21,6 @@ class HomeViewController: BaseViewController, Storyboarded {
     private let rowSpacing: CGFloat = 8.0
     
     private var viewModel: HomeViewModel?
-    private var alertFactory: AlertFactory?
     var appCoordinator: AppCoordinator?
     
     override func viewDidLoad() {
@@ -34,9 +33,8 @@ class HomeViewController: BaseViewController, Storyboarded {
         hideKeyboardWhenTappedAround()
     }
     
-    func configure(with viewModel: HomeViewModel, alertFactory: AlertFactory) {
+    func configure(with viewModel: HomeViewModel) {
         self.viewModel = viewModel
-        self.alertFactory = alertFactory
     }
     
     private func setupView() {
@@ -93,11 +91,7 @@ class HomeViewController: BaseViewController, Storyboarded {
     
     private func showErrorAlert(with messageError: String) {
         refreshControl.endRefreshing()
-        if let alert = alertFactory?.createAlert(title: "Ocurrió un error", message: messageError) {
-            present(alert, animated: true, completion: nil)
-        } else {
-            print("No se pudo crear la alerta de servicios de ubicación desactivados.")
-        }
+        appCoordinator?.showAlert(title: "Ocurrió un error", message: messageError)
     }
     
     public func navigateToDetail(with recipe: Recipe) {
