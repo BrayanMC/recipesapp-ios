@@ -18,7 +18,7 @@ class MapViewModel: BaseViewModel {
     private(set) var locationUpdate: Bindable<CLLocation?> = Bindable(nil)
     private(set) var locationServicesDisabled: Bindable<Bool> = Bindable(false)
     
-    private let viewData: MapViewData
+    public let viewData: MapViewData
     private let locationManager = LocationManager()
     
     init(viewData: MapViewData) {

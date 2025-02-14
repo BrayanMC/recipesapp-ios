@@ -9,7 +9,7 @@ import RxSwift
 import Repositories
 import Models
 
-public class FetchRecipesUseCase {
+public class FetchRecipesUseCase: FetchRecipesUseCaseProtocol {
     
     private let recipesRepository: RecipesRepositoryProtocol
     

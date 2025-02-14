@@ -58,6 +58,7 @@ let package = Package(
                 .product(name: "Models", package: "Domain"),
                 .product(name: "Repositories", package: "Data"),
                 .product(name: "DataMocks", package: "Data"),
+                .product(name: "DomainMocks", package: "Domain"),
             ]
         ),
     ]

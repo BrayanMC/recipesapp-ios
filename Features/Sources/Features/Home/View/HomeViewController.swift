@@ -88,7 +88,7 @@ public class HomeViewController: BaseViewController, Storyboarded {
         configureNavigationBar(isHidden: true)
     }
     
-    private func fetchRecipes() {
+    public func fetchRecipes() {
         viewModel?.fetchRecipes()
     }
     
@@ -111,7 +111,7 @@ public class HomeViewController: BaseViewController, Storyboarded {
 extension HomeViewController: ViewStylerProtocol {
     
     public func configureViewStyles() {
-        AppThemeManager.shared.applyTextLargeStyle(to: titleLabel)
+        //AppThemeManager.shared.applyTextLargeStyle(to: titleLabel)
     }
 }
 

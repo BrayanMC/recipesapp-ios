@@ -14,7 +14,7 @@ import Models
 
 class HomeViewModel: BaseViewModel {
     
-    private let fetchRecipesUseCase: FetchRecipesUseCase
+    private let fetchRecipesUseCase: FetchRecipesUseCaseProtocol
     
     private(set) var allRecipes: [Recipe] = []
     public private(set) var recipes: Bindable<[Recipe]> = Bindable([])
@@ -24,11 +24,11 @@ class HomeViewModel: BaseViewModel {
     private let pageSize = 10
     private var isLoading = false
     
-    init(fetchRecipesUseCase: FetchRecipesUseCase) {
+    init(fetchRecipesUseCase: FetchRecipesUseCaseProtocol) {
         self.fetchRecipesUseCase = fetchRecipesUseCase
     }
     
-    func fetchRecipes() {
+    open func fetchRecipes() {
         guard !isLoading else { return }
         
         isLoading = true
