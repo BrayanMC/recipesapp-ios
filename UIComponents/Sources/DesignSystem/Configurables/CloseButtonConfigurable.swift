@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import CommonManagers
-import CommonHelpers
 
 @MainActor
 public protocol CloseButtonConfigurable {

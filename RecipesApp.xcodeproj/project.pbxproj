@@ -10,11 +10,12 @@
 		8406612C2D5EE6C900239B2B /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612B2D5EE6C900239B2B /* Networking */; };
 		8406612E2D5EE78000239B2B /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = 8406612D2D5EE78000239B2B /* Repositories */; };
 		841057F72D5EF5D500D403F7 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F62D5EF5D500D403F7 /* Features */; };
-		841057F92D5EF5D500D403F7 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F82D5EF5D500D403F7 /* UIComponents */; };
 		841057FB2D5F1A4D00D403F7 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 841057FA2D5F1A4D00D403F7 /* Helpers */; };
+		841058142D5F2D3F00D403F7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 841058132D5F2D3F00D403F7 /* DesignSystem */; };
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
+		84B265F52D5F39CF000A256C /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 84B265F42D5F39CF000A256C /* SkeletonView */; };
 		84DD53E82D5EEC68001004C8 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E72D5EEC68001004C8 /* Models */; };
 		84DD53EA2D5EEC68001004C8 /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E92D5EEC68001004C8 /* UseCases */; };
 		84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2F34C2D5DB9C100BDB49E /* SDWebImage */; };
@@ -62,24 +63,14 @@
 		84275CAA2D5B2C7D001CBBFF /* Exceptions for "RecipesApp" folder in "RecipesAppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Localized: Resources/Localizable.strings",
-				Resources/Assets/Assets.xcassets,
-				Resources/Assets/Colors.xcassets,
-				"Resources/Fonts/MuseoSans-300.otf",
-				"Resources/Fonts/MuseoSans-500.otf",
-				"Resources/Fonts/MuseoSans-700.otf",
+				"/Localized: Supporting Files/Localizable.strings",
 			);
 			target = 84D6F7012D5B08FE002381AC /* RecipesAppTests */;
 		};
 		84275CAB2D5B2C7D001CBBFF /* Exceptions for "RecipesApp" folder in "RecipesAppUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Localized: Resources/Localizable.strings",
-				Resources/Assets/Assets.xcassets,
-				Resources/Assets/Colors.xcassets,
-				"Resources/Fonts/MuseoSans-300.otf",
-				"Resources/Fonts/MuseoSans-500.otf",
-				"Resources/Fonts/MuseoSans-700.otf",
+				"/Localized: Supporting Files/Localizable.strings",
 			);
 			target = 84D6F70B2D5B08FE002381AC /* RecipesAppUITests */;
 		};
@@ -122,10 +113,11 @@
 			files = (
 				84DD53E82D5EEC68001004C8 /* Models in Frameworks */,
 				841057F72D5EF5D500D403F7 /* Features in Frameworks */,
-				841057F92D5EF5D500D403F7 /* UIComponents in Frameworks */,
 				8406612E2D5EE78000239B2B /* Repositories in Frameworks */,
 				84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */,
+				84B265F52D5F39CF000A256C /* SkeletonView in Frameworks */,
 				84F2FA972D5E5D7200BDB49E /* CommonHelpers in Frameworks */,
+				841058142D5F2D3F00D403F7 /* DesignSystem in Frameworks */,
 				84DD53EA2D5EEC68001004C8 /* UseCases in Frameworks */,
 				84F2FA952D5E5ABA00BDB49E /* CommonExtensions in Frameworks */,
 				84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */,
@@ -293,9 +285,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				84F2F34B2D5DB9C100BDB49E /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				84F2F34E2D5DBA3700BDB49E /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				84F2F4582D5DBABC00BDB49E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				84F2F45B2D5DBAEB00BDB49E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				84B265F32D5F39CF000A256C /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 84D6F6ED2D5B08FD002381AC /* Products */;
@@ -670,6 +662,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		84B265F32D5F39CF000A256C /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.31.0;
+			};
+		};
 		84F2F34B2D5DB9C100BDB49E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -717,13 +717,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Features;
 		};
-		841057F82D5EF5D500D403F7 /* UIComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIComponents;
-		};
 		841057FA2D5F1A4D00D403F7 /* Helpers */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Helpers;
+		};
+		841058132D5F2D3F00D403F7 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 		84B0A6552D5E971500D6D3DA /* Factories */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -736,6 +736,11 @@
 		84B0A66D2D5EA20500D6D3DA /* Dependencies */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Dependencies;
+		};
+		84B265F42D5F39CF000A256C /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84B265F32D5F39CF000A256C /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		84DD53E72D5EEC68001004C8 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;

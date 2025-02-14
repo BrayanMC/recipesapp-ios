@@ -10,4 +10,5 @@ public struct ImageNames {
     public static let icCloseNormal = "ic_close_normal"
     public static let icBackNormal = "ic_back_normal"
     public static let icCheckGreenCircle = "ic_check_green_circle"
+    public static let icRightarrow = "ic_right_arrow"
 }

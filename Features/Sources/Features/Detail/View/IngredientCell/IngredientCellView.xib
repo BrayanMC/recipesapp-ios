@@ -48,6 +48,7 @@
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <connections>
+                <outlet property="indicatorImageView" destination="XCL-Rq-cZg" id="u31-JP-121"/>
                 <outlet property="ingredientLabel" destination="IUo-mU-8MQ" id="ImY-tf-Ake"/>
             </connections>
             <point key="canvasLocation" x="139.69465648854961" y="-8.4507042253521139"/>

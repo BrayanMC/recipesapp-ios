@@ -11,7 +11,7 @@ import CoreLocation
 import CommonHelpers
 import Base
 import Models
-import UIComponents
+import DesignSystem
 import Helpers
 
 public class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurable {

@@ -38,7 +38,7 @@ public final class ImageManager: @unchecked Sendable {
         }
         
         // If the image is not found in the cache, try to load it from the asset catalog.
-        guard let image = UIImage(named: name) else {
+        guard let image = UIImage(named: name, in: .module, with: nil) else {
             return nil
         }
         

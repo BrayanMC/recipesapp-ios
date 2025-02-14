@@ -10,7 +10,7 @@ import CommonHelpers
 import DIContainer
 import Networking
 import Features
-import UIComponents
+import DesignSystem
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     

@@ -7,10 +7,11 @@
 
 import UIKit
 import CommonManagers
-import UIComponents
+import DesignSystem
 
 class IngredientCellView: UITableViewCell {
     
+    @IBOutlet weak var indicatorImageView: UIImageView!
     @IBOutlet weak var ingredientLabel: UILabel!
     
     override func awakeFromNib() {
@@ -22,6 +23,7 @@ class IngredientCellView: UITableViewCell {
     
     private func setupView() {
         configureViewStyles()
+        indicatorImageView.image = ImageManager.shared.image(named: ImageNames.icCheckGreenCircle)
     }
     
     func buildCell(with ingredient: String) {

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import CommonExtensions
-import CommonManagers
 
 public class DefaultTheme: ThemeProtocol {
     

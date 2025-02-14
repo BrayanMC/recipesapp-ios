@@ -10,7 +10,7 @@ import CommonHelpers
 import Base
 import Factories
 import Models
-import UIComponents
+import DesignSystem
 import Helpers
 
 public class HomeViewController: BaseViewController, Storyboarded {

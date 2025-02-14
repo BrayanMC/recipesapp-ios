@@ -9,7 +9,7 @@ import UIKit
 import CommonExtensions
 import CommonManagers
 import Models
-import UIComponents
+import DesignSystem
 
 class RecipeCellView: UITableViewCell {
     
@@ -35,6 +35,7 @@ class RecipeCellView: UITableViewCell {
     
     private func setupView() {
         configureViewStyles()
+        arrowImageView.image = ImageManager.shared.image(named: ImageNames.icRightarrow)
     }
     
     private func setupContentView() {

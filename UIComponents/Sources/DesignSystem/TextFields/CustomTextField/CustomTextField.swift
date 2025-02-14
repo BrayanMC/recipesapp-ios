@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import CommonHelpers
-import CommonManagers
 
 public class CustomTextField: UIView {
     
@@ -87,7 +85,7 @@ public class CustomTextField: UIView {
     
     private func applySettingsForSearchField() {
         let dimensions = tooltipHeightAndWidth.size
-        let image = UIImage(named: ImageNames.icSearchNormal)
+        let image = UIImage(named: ImageNames.icSearchNormal, in: .module, compatibleWith: nil)
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(dimensions.width), height: CGFloat(dimensions.height))
         textField.setLeftViewWithPadding(imageView, padding: 34.0)
@@ -116,7 +114,12 @@ public class CustomTextField: UIView {
         toolBar.isTranslucent = false
         toolBar.sizeToFit()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "keyboard_barButtonItem_title_accept".localized, style: UIBarButtonItem.Style.plain, target: self, action: #selector(textFieldAcceptButtonTapped))
+        let doneButton = UIBarButtonItem(
+            title: "keyboard_barButtonItem_title_accept".localized,
+            style: UIBarButtonItem.Style.plain,
+            target: self,
+            action: #selector(textFieldAcceptButtonTapped)
+        )
         toolBar.setItems([spaceButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolBar

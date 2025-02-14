@@ -30,7 +30,7 @@
                                         <color key="textColor" name="Black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mck-BS-YAh" customClass="CustomTextField" customModule="UIComponents">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mck-BS-YAh" customClass="CustomTextField" customModule="DesignSystem">
                                         <rect key="frame" x="30" y="54" width="333" height="54"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>

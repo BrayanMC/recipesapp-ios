@@ -7,8 +7,7 @@
 
 import UIKit
 import SkeletonView
-import CommonHelpers
-import CommonManagers
+import DesignSystem
 
 extension UIView {
     
@@ -89,7 +88,6 @@ extension UIView {
     
     public func isShimmer(_ isActive: Bool, cornerRadius: Float = 0) {
         if isActive {
-            
             skeletonCornerRadius = cornerRadius
             isSkeletonable = true
             (self as? UILabel)?.linesCornerRadius = Int(cornerRadius)

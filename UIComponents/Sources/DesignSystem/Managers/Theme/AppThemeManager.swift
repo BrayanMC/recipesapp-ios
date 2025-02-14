@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CommonManagers
 
 @MainActor
 public final class AppThemeManager {

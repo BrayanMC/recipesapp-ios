@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CommonManagers
+import DesignSystem
 
 extension UIViewController {
     

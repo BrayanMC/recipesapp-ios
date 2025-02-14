@@ -27,7 +27,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.1.0"),
-        .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.30.4")
+        .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.31.0"),
+        .package(path: "../UIComponents"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -36,7 +37,8 @@ let package = Package(
             name: "CommonExtensions",
             dependencies: [
                 .product(name: "SDWebImage", package: "SDWebImage"),
-                .product(name: "SkeletonView", package: "SkeletonView")
+                .product(name: "SkeletonView", package: "SkeletonView"),
+                .product(name: "DesignSystem", package: "UIComponents"),
             ]
         ),
         .target(

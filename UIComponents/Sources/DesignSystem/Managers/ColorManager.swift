@@ -10,7 +10,7 @@ import UIKit
 public final class ColorManager {
 
     private static func color(named name: String) -> UIColor {
-        return UIColor(named: name) ?? .black
+        return UIColor(named: name, in: .module, compatibleWith: nil) ?? .black
     }
     
     public static var black: UIColor {

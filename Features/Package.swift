@@ -21,6 +21,7 @@ let package = Package(
         .package(path: "../Core"),
         .package(path: "../Domain"),
         .package(path: "../DIContainer"),
+        .package(path: "../UIComponents"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,6 +35,7 @@ let package = Package(
                 .product(name: "DIContainer", package: "DIContainer"),
                 .product(name: "Models", package: "Domain"),
                 .product(name: "UseCases", package: "Domain"),
+                .product(name: "DesignSystem", package: "UIComponents"),
             ],
             path: "Sources/Features",
             resources: [
