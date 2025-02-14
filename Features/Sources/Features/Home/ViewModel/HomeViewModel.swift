@@ -17,7 +17,7 @@ class HomeViewModel: BaseViewModel {
     private let fetchRecipesUseCase: FetchRecipesUseCase
     
     private(set) var allRecipes: [Recipe] = []
-    private(set) var recipes: Bindable<[Recipe]> = Bindable([])
+    public private(set) var recipes: Bindable<[Recipe]> = Bindable([])
     private(set) var filteredArray: Bindable<[Recipe]> = Bindable([])
     
     private var currentPage = 0

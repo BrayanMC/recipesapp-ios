@@ -12,6 +12,12 @@
 		841057F72D5EF5D500D403F7 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 841057F62D5EF5D500D403F7 /* Features */; };
 		841057FB2D5F1A4D00D403F7 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 841057FA2D5F1A4D00D403F7 /* Helpers */; };
 		841058142D5F2D3F00D403F7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 841058132D5F2D3F00D403F7 /* DesignSystem */; };
+		8476143E2D5F870900335E18 /* DataMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 8476143D2D5F870900335E18 /* DataMocks */; };
+		847F4E0C2D5F4DF30067BA5E /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0B2D5F4DF30067BA5E /* Repositories */; };
+		847F4E0E2D5F4E050067BA5E /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0D2D5F4E050067BA5E /* Models */; };
+		847F4E102D5F4E050067BA5E /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E0F2D5F4E050067BA5E /* UseCases */; };
+		847F4E122D5F5B150067BA5E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E112D5F5B150067BA5E /* Networking */; };
+		847F4E142D5F60E90067BA5E /* DataMock in Frameworks */ = {isa = PBXBuildFile; productRef = 847F4E132D5F60E90067BA5E /* DataMock */; };
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
@@ -138,6 +144,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847F4E102D5F4E050067BA5E /* UseCases in Frameworks */,
+				847F4E0E2D5F4E050067BA5E /* Models in Frameworks */,
+				8476143E2D5F870900335E18 /* DataMocks in Frameworks */,
+				847F4E122D5F5B150067BA5E /* Networking in Frameworks */,
+				847F4E0C2D5F4DF30067BA5E /* Repositories in Frameworks */,
+				847F4E142D5F60E90067BA5E /* DataMock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +736,30 @@
 		841058132D5F2D3F00D403F7 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		8476143D2D5F870900335E18 /* DataMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataMocks;
+		};
+		847F4E0B2D5F4DF30067BA5E /* Repositories */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Repositories;
+		};
+		847F4E0D2D5F4E050067BA5E /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		847F4E0F2D5F4E050067BA5E /* UseCases */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UseCases;
+		};
+		847F4E112D5F5B150067BA5E /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		847F4E132D5F60E90067BA5E /* DataMock */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataMock;
 		};
 		84B0A6552D5E971500D6D3DA /* Factories */ = {
 			isa = XCSwiftPackageProductDependency;
