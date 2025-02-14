@@ -8,6 +8,7 @@
 import UIKit
 import CommonExtensions
 import CommonManagers
+import Models
 
 class RecipeCellView: UITableViewCell {
     

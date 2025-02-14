@@ -6,6 +6,7 @@
 //
 
 import Base
+import Models
 
 struct RecipeDetailViewData: BaseViewData {
     let recipe: Recipe

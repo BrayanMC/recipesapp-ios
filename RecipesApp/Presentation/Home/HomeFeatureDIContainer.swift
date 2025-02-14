@@ -11,6 +11,7 @@ import Dependencies
 import Base
 import Repositories
 import Networking
+import UseCases
 
 public class HomeFeatureDIContainer: HomeFeatureDependencies {
     

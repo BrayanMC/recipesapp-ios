@@ -10,6 +10,7 @@ import DIContainer
 import Factories
 import Dependencies
 import CommonHelpers
+import Models
 
 @MainActor
 class AppCoordinator {

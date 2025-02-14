@@ -12,6 +12,8 @@
 		84B0A6562D5E971500D6D3DA /* Factories in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6552D5E971500D6D3DA /* Factories */; };
 		84B0A66A2D5EA0A200D6D3DA /* DIContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A6692D5EA0A200D6D3DA /* DIContainer */; };
 		84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0A66D2D5EA20500D6D3DA /* Dependencies */; };
+		84DD53E82D5EEC68001004C8 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E72D5EEC68001004C8 /* Models */; };
+		84DD53EA2D5EEC68001004C8 /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 84DD53E92D5EEC68001004C8 /* UseCases */; };
 		84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2F34C2D5DB9C100BDB49E /* SDWebImage */; };
 		84F2F3502D5DBA3700BDB49E /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2F34F2D5DBA3700BDB49E /* SkeletonView */; };
 		84F2F45A2D5DBABC00BDB49E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84F2F4592D5DBABC00BDB49E /* Alamofire */; };
@@ -42,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		840661282D5EE2F800239B2B /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		8438FEF32D5EEA8500A2AD2A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		84B0A6442D5E902B00D6D3DA /* DIContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DIContainer; sourceTree = "<group>"; };
 		84D6F6EC2D5B08FD002381AC /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D6F7022D5B08FE002381AC /* RecipesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,9 +139,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DD53E82D5EEC68001004C8 /* Models in Frameworks */,
 				8406612E2D5EE78000239B2B /* Repositories in Frameworks */,
 				84F2F34D2D5DB9C100BDB49E /* SDWebImage in Frameworks */,
 				84F2FA972D5E5D7200BDB49E /* CommonHelpers in Frameworks */,
+				84DD53EA2D5EEC68001004C8 /* UseCases in Frameworks */,
 				84F2FA952D5E5ABA00BDB49E /* CommonExtensions in Frameworks */,
 				84B0A66E2D5EA20500D6D3DA /* Dependencies in Frameworks */,
 				84F2F45A2D5DBABC00BDB49E /* Alamofire in Frameworks */,
@@ -173,6 +178,7 @@
 		84D6F6E32D5B08FD002381AC = {
 			isa = PBXGroup;
 			children = (
+				8438FEF32D5EEA8500A2AD2A /* Domain */,
 				840661282D5EE2F800239B2B /* Data */,
 				84B0A6442D5E902B00D6D3DA /* DIContainer */,
 				84F2FC5E2D5E7D9700BDB49E /* Core */,
@@ -732,6 +738,14 @@
 		84B0A66D2D5EA20500D6D3DA /* Dependencies */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Dependencies;
+		};
+		84DD53E72D5EEC68001004C8 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		84DD53E92D5EEC68001004C8 /* UseCases */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UseCases;
 		};
 		84F2F34C2D5DB9C100BDB49E /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

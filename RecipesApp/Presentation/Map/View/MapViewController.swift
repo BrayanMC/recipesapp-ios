@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 import CommonHelpers
 import Base
+import Models
 
 class MapViewController: BaseViewController, Storyboarded, CloseButtonConfigurable {
     

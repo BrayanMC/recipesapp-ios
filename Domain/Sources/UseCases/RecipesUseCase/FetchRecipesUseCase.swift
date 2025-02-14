@@ -7,16 +7,17 @@
 
 import RxSwift
 import Repositories
+import Models
 
-class FetchRecipesUseCase {
+public class FetchRecipesUseCase {
     
     private let recipesRepository: RecipesRepositoryProtocol
     
-    init(recipesRepository: RecipesRepositoryProtocol) {
+    public init(recipesRepository: RecipesRepositoryProtocol) {
         self.recipesRepository = recipesRepository
     }
     
-    func execute() -> Single<[Recipe]> {
+    public func execute() -> Single<[Recipe]> {
         return recipesRepository.fetchRecipes()
             .map { response in
                 response.recipes.map { Recipe(from: $0) }
