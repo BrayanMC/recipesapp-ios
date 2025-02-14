@@ -22,6 +22,7 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(path: "../Domain"),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.8.0"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.5")
     ],
@@ -33,6 +34,7 @@ let package = Package(
             dependencies: [
                 "Networking",
                 .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "UseCases", package: "Domain"),
             ]
         ),
         .target(

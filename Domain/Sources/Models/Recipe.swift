@@ -5,7 +5,7 @@
 //  Created by Brayan Munoz Campos on 11/02/25.
 //
 
-import Networking
+public typealias Recipes = [Recipe]
 
 public struct Recipe: Decodable {
     public let id: Int
@@ -34,26 +34,5 @@ public struct Recipe: Decodable {
             self.latitude = latitude
             self.longitude = longitude
         }
-    }
-}
-
-extension Recipe {
-    
-    public init(from response: RecipesResponse.RecipeResponse) {
-        self.id = response.id ?? 0
-        self.name = response.name ?? ""
-        self.description = response.description ?? ""
-        self.ingredients = response.ingredients?.map { $0 } ?? []
-        self.image = response.image ?? ""
-        self.location = Recipe.Location(from: response.location ?? nil)
-        self.preparationTime = response.preparationTime ?? ""
-    }
-}
-
-extension Recipe.Location {
-    
-    init(from response: RecipesResponse.RecipeResponse.LocationResponse?) {
-        self.latitude = response?.latitude ?? 0.0
-        self.longitude = response?.longitude ?? 0.0
     }
 }

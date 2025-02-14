@@ -22,7 +22,6 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../Data"),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.8.0"),
     ],
     targets: [
@@ -33,20 +32,15 @@ let package = Package(
             dependencies: [
                 "Models",
                 .product(name: "RxSwift", package: "RxSwift"),
-                .product(name: "Repositories", package: "Data"),
             ]
         ),
         .target(
-            name: "Models",
-            dependencies: [
-                .product(name: "Networking", package: "Data"),
-            ]
+            name: "Models"
         ),
         .target(
             name: "DomainMocks",
             dependencies: [
                 "Models",
-                .product(name: "Networking", package: "Data"),
                 .product(name: "RxSwift", package: "RxSwift"),
             ]
         ),

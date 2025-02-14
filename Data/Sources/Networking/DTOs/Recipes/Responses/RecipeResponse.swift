@@ -5,6 +5,8 @@
 //  Created by Brayan Munoz Campos on 11/02/25.
 //
 
+import Models
+
 public struct RecipesResponse: Decodable {
     
     public let recipes: [RecipeResponse]
@@ -50,5 +52,30 @@ public struct RecipesResponse: Decodable {
     
     public init(recipes: [RecipeResponse]) {
         self.recipes = recipes
+    }
+}
+
+extension Recipe {
+    
+    public init(from response: RecipesResponse.RecipeResponse) {
+        self.init(
+            id: response.id ?? 0,
+            name: response.name ?? "",
+            description: response.description ?? "",
+            ingredients: response.ingredients?.map { $0 } ?? [],
+            image: response.image ?? "",
+            location: Recipe.Location(from: response.location),
+            preparationTime: response.preparationTime ?? ""
+        )
+    }
+}
+
+extension Recipe.Location {
+    
+    public init(from response: RecipesResponse.RecipeResponse.LocationResponse?) {
+        self.init(
+            latitude: response?.latitude ?? 0.0,
+            longitude: response?.longitude ?? 0.0
+        )
     }
 }

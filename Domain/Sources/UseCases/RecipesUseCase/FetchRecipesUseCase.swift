@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import Repositories
 import Models
 
 public class FetchRecipesUseCase: FetchRecipesUseCaseProtocol {
@@ -18,9 +17,6 @@ public class FetchRecipesUseCase: FetchRecipesUseCaseProtocol {
     }
     
     public func execute() -> Single<[Recipe]> {
-        return recipesRepository.fetchRecipes()
-            .map { response in
-                response.recipes.map { Recipe(from: $0) }
-            }
+        recipesRepository.fetchRecipes()
     }
 }

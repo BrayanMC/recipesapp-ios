@@ -24,8 +24,8 @@ public class HomeFeatureDIContainer: HomeFeatureDependencies {
         let networkManager = NetworkManager()
         diContainer.register(type: NetworkManager.self, service: networkManager)
         
-        let remoteRecipesRepository = RemoteRecipesRepository(networkManager: networkManager)
-        diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository)
+        let remoteRecipesRepository: RecipesRepositoryProtocol = RemoteRecipesRepository(networkManager: networkManager)
+        diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository as! RemoteRecipesRepository)
         
         let fetchRecipesUseCase = FetchRecipesUseCase(recipesRepository: remoteRecipesRepository)
         diContainer.register(type: FetchRecipesUseCase.self, service: fetchRecipesUseCase)

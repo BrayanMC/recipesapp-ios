@@ -37,7 +37,7 @@ public struct Endpoint {
             ])
         }
         
-        public static func recipeDetailWithId(_ recipeId: String) -> Endpoint {
+        public static func recipeDetailWithId(_ recipeId: Int) -> Endpoint {
             return Endpoint(path: "/recipes/\(recipeId)", queryItems: nil)
         }
     }
