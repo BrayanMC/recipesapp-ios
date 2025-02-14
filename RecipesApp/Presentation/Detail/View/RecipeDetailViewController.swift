@@ -29,6 +29,7 @@ class RecipeDetailViewController: BaseViewController, Storyboarded, BackButtonCo
     private let rowSpacing: CGFloat = 16.0
     
     private var viewModel: RecipeDetailViewModel?
+    var appCoordinator: AppCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,19 +109,7 @@ class RecipeDetailViewController: BaseViewController, Storyboarded, BackButtonCo
     
     @IBAction func goToLocationCustomButtonTapped(_ sender: Any) {
         guard let recipe = viewModel?.recipeDetail.value else { return }
-        guard let sceneDelegate = UIApplication.shared.connectedScenes
-            .first?.delegate as? SceneDelegate else {
-            return
-        }
-        
-        let viewData = MapViewData(recipe: recipe)
-        let mapViewController = ViewControllerFactory.makeMapViewController(
-            with: viewData,
-            diContainer: sceneDelegate.diContainer
-        )
-        mapViewController.modalPresentationStyle = .overCurrentContext
-        
-        presentInNavigationController(viewController: mapViewController)
+        appCoordinator?.navigateToMap(with: recipe)
     }
 }
 

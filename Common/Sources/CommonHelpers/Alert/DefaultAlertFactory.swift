@@ -7,9 +7,13 @@
 
 import UIKit
 
-class DefaultAlertFactory: AlertFactory {
+public class DefaultAlertFactory: @preconcurrency AlertFactory {
     
-    func createAlert(title: String, message: String) -> UIAlertController {
+    public init() {
+        // empty
+    }
+    
+    @MainActor public func createAlert(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         return alert

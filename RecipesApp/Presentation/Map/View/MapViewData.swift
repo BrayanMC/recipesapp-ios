@@ -5,6 +5,8 @@
 //  Created by Brayan Munoz Campos on 12/02/25.
 //
 
-struct MapViewData {
+import Base
+
+struct MapViewData: BaseViewData {
     let recipe: Recipe
 }
