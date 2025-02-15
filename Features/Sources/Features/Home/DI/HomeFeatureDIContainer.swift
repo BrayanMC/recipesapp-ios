@@ -21,9 +21,7 @@ public class HomeFeatureDIContainer: HomeFeatureDependencies {
     public init(diContainer: DIContainer) {
         self.diContainer = diContainer
         
-        let networkManager = NetworkManager()
-        diContainer.register(type: NetworkManager.self, service: networkManager)
-        
+        let networkManager = diContainer.resolve(type: NetworkManager.self) ?? NetworkManager()
         let remoteRecipesRepository: RecipesRepositoryProtocol = RemoteRecipesRepository(networkManager: networkManager)
         diContainer.register(type: RemoteRecipesRepository.self, service: remoteRecipesRepository as! RemoteRecipesRepository)
         
