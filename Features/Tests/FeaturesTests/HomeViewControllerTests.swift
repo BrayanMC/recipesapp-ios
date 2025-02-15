@@ -7,6 +7,7 @@
 
 import XCTest
 import Models
+import UseCases
 import DomainMocks
 @testable import Features
 
@@ -80,6 +81,7 @@ final class HomeViewControllerTests: XCTestCase, Sendable {
         // Given
         setupData()
         
+        // When
         let recipes = (1...10).map { i in
             Recipe(
                 id: i,
@@ -108,52 +110,10 @@ final class HomeViewControllerTests: XCTestCase, Sendable {
         
         clearAllObjects()
     }
-    
-    /*
-     func testHomeViewController_whenCellTapped_navigatesToRecipeDetailViewController() throws {
-         // Given
-         setupData()
-         
-         let _ = try XCTUnwrap(sut.recipesTableView, "The recipesTableView is not connected to an IBOutlet")
-         
-         let recipes = (1...10).map { i in
-             Recipe(
-                 id: i,
-                 name: "Recipe \(i)",
-                 description: "Description \(i)",
-                 ingredients: ["Ingredient \(i)"],
-                 image: "https://example.com/image\(i).jpg",
-                 location: Recipe.Location(
-                     latitude: Double(i),
-                     longitude: Double(i)
-                 ),
-                 preparationTime: "\(i) mins"
-             )
-         }
-         mockFetchRecipesUseCase.fetchRecipesResult = .just(recipes)
-         sut.fetchRecipes()
-         
-         // When
-         let indexPath = IndexPath(row: 0, section: 0)
-         let expectation = self.expectation(description: "Navigation to RecipeDetailViewController")
-         
-         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-             self.sut.navigateToDetail(with: recipes[0])
-             expectation.fulfill()
-         }
-         
-         // Then
-         wait(for: [expectation], timeout: 2)
-         let pushedViewController = spyNavigationController.pushedViewController
-         XCTAssertTrue(pushedViewController is RecipeDetailViewController, "The pushed view controller should be RecipeDetailViewController")
-         
-         clearAllObjects()
-     }
-     */
         
     private func setupData() {
         mockFetchRecipesUseCase = MockFetchRecipesUseCase()
-        homeViewModel = HomeViewModel(fetchRecipesUseCase: mockFetchRecipesUseCase)
+        homeViewModel = HomeViewModel(fetchRecipesUseCase: mockFetchRecipesUseCase as! FetchRecipesUseCaseProtocol)
         sut = makeSUT(viewModel: homeViewModel)
         spyNavigationController = SpyNavigationController(rootViewController: sut)
         sut.loadViewIfNeeded()

@@ -42,6 +42,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
                 .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "Models", package: "Domain"),
             ]
         ),
         .target(
