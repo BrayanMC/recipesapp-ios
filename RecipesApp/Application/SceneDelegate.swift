@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         initAppTheme()
         initMonitoring()
+        setupDIContainer()
         
         let alertFactory = DefaultAlertFactory()
         let settingsAlertFactory = SettingsAlertFactory()
@@ -83,5 +84,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func initMonitoring() {
         NetworkMonitor.shared.startMonitoring()
+    }
+    
+    private func setupDIContainer() {
+        let networkManager = NetworkManager()
+        diContainer.register(type: NetworkManager.self, service: networkManager)
     }
 }
