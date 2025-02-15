@@ -6,20 +6,21 @@
 //
 
 import RxSwift
-import Repositories
+import UseCases
+import Models
 import Networking
 import Foundation
 
 public class MockRemoteRecipesRepository: RecipesRepositoryProtocol {
     
-    public var fetchRecipesResult: Single<RecipesResponse>?
-    public var fetchRecipeDetailResult: Single<RecipesResponse.RecipeResponse>?
+    public var fetchRecipesResult: Single<Recipes>?
+    public var fetchRecipeDetailResult: Single<Recipe>?
     
     public init() {
         // empty
     }
     
-    public func fetchRecipes() -> Single<RecipesResponse> {
+    public func fetchRecipes() -> Single<Recipes> {
         return fetchRecipesResult ?? Single.error(
             NSError(
                 domain: "MockRemoteRecipesRepository",
@@ -29,7 +30,7 @@ public class MockRemoteRecipesRepository: RecipesRepositoryProtocol {
         )
     }
     
-    public func fetchRecipeDetail(request: FetchRecipeRequest) -> Single<RecipesResponse.RecipeResponse> {
+    public func fetchRecipeDetail(request recipeId: Int) -> Single<Recipe> {
         return fetchRecipeDetailResult ?? Single.error(
             NSError(
                 domain: "MockRemoteRecipesRepository",

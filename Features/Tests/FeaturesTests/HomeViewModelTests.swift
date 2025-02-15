@@ -32,20 +32,19 @@ final class HomeViewModelTests: XCTestCase {
     
     func testHomeViewModel_WhenRecipesLoadedSuccessfully_RecipesShouldBeUpdated() {
         // Given
-        let recipeResponse = RecipesResponse.RecipeResponse(
+        let recipe = Recipe(
             id: 1,
             name: "Ceviche",
             description: "Pescado fresco marinado en jugo de limón con cebollas, cilantro y ajíes",
             ingredients: ["Pescado", "Jugo de limón", "Cebolla", "Cilantro", "Ajíes"],
             image: "https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_orig.jpg",
-            location: RecipesResponse.RecipeResponse.LocationResponse(
+            location: Recipe.Location(
                 latitude: -12.116948802044167,
                 longitude: -76.97099887395366
             ),
             preparationTime: "15 mins"
         )
-        let recipesResponse = RecipesResponse(recipes: [recipeResponse])
-        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipesResponse)
+        mockRemoteRecipesRepository.fetchRecipesResult = .just([recipe])
         
         let sut = makeSUT(fetchRecipesUseCase: fetchRecipesUseCase)
         
@@ -101,22 +100,21 @@ final class HomeViewModelTests: XCTestCase {
     
     func testHomeViewModel_WhenScrolled_RecipesShouldBeUpdated() {
         // Given
-        let recipeResponses = (1...30).map { i in
-            RecipesResponse.RecipeResponse(
+        let recipes = (1...30).map { i in
+            Recipe(
                 id: i,
                 name: "Recipe \(i)",
                 description: "Description \(i)",
                 ingredients: ["Ingredient \(i)"],
                 image: "https://example.com/recipe\(i).jpg",
-                location: RecipesResponse.RecipeResponse.LocationResponse(
+                location: Recipe.Location(
                     latitude: Double(i),
                     longitude: Double(i)
                 ),
                 preparationTime: "\(i) mins"
             )
         }
-        let recipesResponse = RecipesResponse(recipes: recipeResponses)
-        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipesResponse)
+        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipes)
         
         let sut = makeSUT(fetchRecipesUseCase: fetchRecipesUseCase)
         
@@ -146,34 +144,33 @@ final class HomeViewModelTests: XCTestCase {
     
     func testHomeViewModel_WhenFilterTextIsApplied_FilteredArrayShouldBeUpdated() {
         // Given
-        let recipeResponses = [
-            RecipesResponse.RecipeResponse(
+        let recipes = [
+            Recipe(
                 id: 1,
                 name: "Ceviche",
                 description: "Pescado fresco marinado en jugo de limón con cebollas, cilantro y ajíes",
                 ingredients: ["Pescado", "Jugo de limón", "Cebolla", "Cilantro", "Ajíes"],
                 image: "https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_orig.jpg",
-                location: RecipesResponse.RecipeResponse.LocationResponse(
+                location: Recipe.Location(
                     latitude: -12.116948802044167,
                     longitude: -76.97099887395366
                 ),
                 preparationTime: "15 mins"
             ),
-            RecipesResponse.RecipeResponse(
+            Recipe(
                 id: 2,
                 name: "Tacos",
                 description: "Tortillas rellenas de carne, queso y vegetales",
                 ingredients: ["Tortilla", "Carne", "Queso", "Vegetales"],
                 image: "https://example.com/tacos.jpg",
-                location: RecipesResponse.RecipeResponse.LocationResponse(
+                location: Recipe.Location(
                     latitude: 19.432608,
                     longitude: -99.133209
                 ),
                 preparationTime: "20 mins"
             )
         ]
-        let recipesResponse = RecipesResponse(recipes: recipeResponses)
-        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipesResponse)
+        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipes)
         
         let sut = makeSUT(fetchRecipesUseCase: fetchRecipesUseCase)
         
@@ -196,34 +193,33 @@ final class HomeViewModelTests: XCTestCase {
     
     func testHomeViewModel_WhenFilterTextDoesNotMatchAnyRecipe_FilteredArrayShouldBeEmpty() {
         // Given
-        let recipeResponses = [
-            RecipesResponse.RecipeResponse(
+        let recipes = [
+            Recipe(
                 id: 1,
                 name: "Ceviche",
                 description: "Pescado fresco marinado en jugo de limón con cebollas, cilantro y ajíes",
                 ingredients: ["Pescado", "Jugo de limón", "Cebolla", "Cilantro", "Ajíes"],
                 image: "https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_orig.jpg",
-                location: RecipesResponse.RecipeResponse.LocationResponse(
+                location: Recipe.Location(
                     latitude: -12.116948802044167,
                     longitude: -76.97099887395366
                 ),
                 preparationTime: "15 mins"
             ),
-            RecipesResponse.RecipeResponse(
+            Recipe(
                 id: 2,
                 name: "Tacos",
                 description: "Tortillas rellenas de carne, queso y vegetales",
                 ingredients: ["Tortilla", "Carne", "Queso", "Vegetales"],
                 image: "https://example.com/tacos.jpg",
-                location: RecipesResponse.RecipeResponse.LocationResponse(
+                location: Recipe.Location(
                     latitude: 19.432608,
                     longitude: -99.133209
                 ),
                 preparationTime: "20 mins"
             )
         ]
-        let recipesResponse = RecipesResponse(recipes: recipeResponses)
-        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipesResponse)
+        mockRemoteRecipesRepository.fetchRecipesResult = .just(recipes)
         
         let sut = makeSUT(fetchRecipesUseCase: fetchRecipesUseCase)
         
