@@ -54,12 +54,19 @@ SPM permite gestionar fácilmente las dependencias mediante el archivo `Package.
 El proyecto está dividido en 7 módulos:
 
 1. **UIComponents**: Contiene componentes personalizados y reutilizables en todo el proyecto.
+    - **Decisión**: Centraliza los componentes de la interfaz de usuario permite reutilizar y mantener un estilo consistente en toda la aplicación, siguiedo una línea gráfica permitiendo reflejar el design system del producto. También contiene extensiones, helpers, configurables entre otros que permiten a gestionar los assets (imágenes, colores, fuentes) dentro de la aplicación.
 2. **DIContainer**: Incluye la clase que registra y proporciona las instancias para la inyección de dependencias.
+    - **Decisión**: Facilita la gestión de dependencias para evitar instanciar objetos en cantidad mejorando la performance de la app, y mejorar la testabilidad del código mediante la inyección de dependencias.
 3. **Core**: Centraliza los métodos principales utilizados en el proyecto. Incluye clases base para reducir el código duplicado en las Views y ViewModels, la clase `BaseViewData` para facilitar el transporte de información entre features, y las clases `Factory` para la creación de ViewControllers y ViewModels.
+    - **Decisión**: Reduce la duplicación de código y proporcionar una base sólida y reutilizable para las funcionalidades comunes que son consideradas el Core de la aplicación.
 4. **Data**: Implementa el consumo de servicios web utilizando Alamofire y RxSwift para la gestión de procesos en segundo plano. Incluye la clase genérica `NetworkManager` para reutilizar la lógica de procesamiento de respuestas del servidor en todos los servicios web, siguiendo el patrón Repositorio.
+    - **Decisión**: Abstrae la lógica de red y mediante la clase genérica Network facilita la reutilización y el tratamiento de la respuesta en base al consumo de servicios web.
 5. **Domain**: Contiene las clases con la lógica de negocio, como casos de uso y modelos.
+    - **Decisión**: Separa la lógica de negocio del resto de la aplicación para mantener un código limpio y modular.
 6. **Common**: Centraliza los métodos utilizados en todo el proyecto.
+    - **Decisión**: Provee utilidades y métodos comunes que pueden ser utilizados en diferentes partes del proyecto, evitando la duplicación de código.
 7. **Features**: Incluye las pantallas `HomeView`, `RecipeDetailView` y `MapView`, cada una con su respectiva ViewModel. Cada feature tiene un archivo contenedor para proporcionar instancias de uso global. La clase `AppCoordinator` encapsula la inicialización de la app y maneja la navegación entre pantallas.
+    - **Decisión**: Modulariza las diferentes funcionalidades de la aplicación para facilitar el desarrollo, mantenimiento y pruebas de cada una de ellas de manera independiente.
 
 <img src="https://github.com/user-attachments/assets/14a456b5-4133-4f81-ad7c-204df3862b2a" width="300" />
 <img src="https://github.com/user-attachments/assets/c73e2ca6-9a67-44c4-add6-c4cab4699eb0" width="300" />
